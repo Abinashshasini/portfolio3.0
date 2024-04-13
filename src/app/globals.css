@@ -3,7 +3,10 @@
 :root {
     --black-primary: #1C1D20;
     --black-secondary: #202024;
-    --text-primary: #D3D3D3
+    --text-primary: #393632;
+    --text-secondary: #6b645c;
+    --bg-primary: #e8e8e3;
+    --bg-secondary: #B3B3A3
 }
 
 /* Font Family */
@@ -16,13 +19,50 @@
         "wdth" 100;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    text-rendering: optimizeLegibility
+}
+
+
 body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto' sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    background-color: var(--black-secondary);
+    min-height: 100svh;
+    background-color: #e8e8e3;
+}
+
+body:after,
+body:before {
+    position: fixed;
+    left: 0;
+    top: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    z-index: 3023023023020;
+    pointer-events: none;
+    opacity: 20%;
+    color: #aeae9d
+}
+
+body:before {
+    filter: url(#grainy);
 }
 
 /* Common Classnames */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
