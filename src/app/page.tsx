@@ -6,6 +6,7 @@ export default function Home() {
     <main>
       <Header />
       <HeroSection />
+      <div style={{ height: '100vh' }}></div>
     </main>
   );
 }

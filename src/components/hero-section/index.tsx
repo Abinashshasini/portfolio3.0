@@ -1,4 +1,6 @@
 import React from 'react';
+import Image from 'next/image';
+import { HeroSVG } from '@/utils';
 import classes from './hero-section.module.scss';
 
 const HeroSection = () => {
@@ -18,6 +20,9 @@ const HeroSection = () => {
           immersive digital experiences that seamlessly blend functionality and
           user appeal.
         </p>
+      </div>
+      <div className={classes.heroCircleImage}>
+        <Image src={HeroSVG} alt="Hero circle image" width={100} height={100} />
       </div>
     </div>
   );

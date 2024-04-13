@@ -55,6 +55,12 @@ body:before {
     filter: url(#grainy);
 }
 
+.grainyBg {
+    cursor: none;
+    position: absolute;
+    position: absolute;
+}
+
 /* Common Classnames */
 h1,
 h2,
@@ -65,4 +71,12 @@ h6,
 p {
     margin: 0;
     padding: 0;
+}
+
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
 }

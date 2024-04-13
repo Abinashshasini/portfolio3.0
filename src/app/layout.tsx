@@ -21,7 +21,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={roboto.className}>{children}</body>
+      <body className={roboto.className}>
+        <svg className="grainyBg">
+          <filter id="grainy">
+            <feTurbulence type="turbulence" baseFrequency="0.5"></feTurbulence>
+            <feColorMatrix type="saturate" values="0"></feColorMatrix>
+          </filter>
+        </svg>
+        {children}
+      </body>
     </html>
   );
 }
