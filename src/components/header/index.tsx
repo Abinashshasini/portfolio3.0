@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import classes from './header.module.scss';
 import { MenuIcon } from '@/utils';
+import classes from './header.module.scss';
 
 const Header = () => {
   return (
