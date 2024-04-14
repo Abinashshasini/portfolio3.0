@@ -1,4 +1,7 @@
 import React from 'react';
+import SkillCard from './skills-card';
+import { skillsData } from '@/utils';
+import { IData } from '@/types';
 import classes from './style.module.scss';
 
 const AboutSection = () => {
@@ -12,6 +15,9 @@ const AboutSection = () => {
           captivating user experience.
         </p>
       </div>
+      {skillsData.map((element: IData, index: number) => (
+        <SkillCard index={index} data={element} key={element.id} />
+      ))}
     </div>
   );
 };
