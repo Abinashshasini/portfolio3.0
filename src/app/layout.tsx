@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
-import { Roboto } from 'next/font/google';
+import { Source_Sans_3 } from 'next/font/google';
 import './globals.css';
 
-const roboto = Roboto({
+const roboto = Source_Sans_3({
   weight: ['400', '700', '500', '500', '300'],
   style: ['normal', 'italic'],
   subsets: ['latin'],

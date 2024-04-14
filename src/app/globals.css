@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
 
+
+
 :root {
-    --black-primary: #1C1D20;
+    --black-primary: #080807;
+    ;
     --black-secondary: #202024;
     --text-primary: #393632;
     --text-secondary: #6b645c;
@@ -80,4 +83,14 @@ svg,
 video {
     display: block;
     max-width: 100%;
+}
+
+.section-padding {
+    padding: 3.5rem 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .section-padding {
+        padding: 5% 4%;
+    }
 }

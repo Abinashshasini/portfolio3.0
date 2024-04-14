@@ -4,6 +4,7 @@ import { AnimatePresence } from 'framer-motion';
 import Header from '@/components/header';
 import Preloader from '@/components/preloader';
 import HeroSection from '@/components/hero-section';
+import AboutSection from '@/components/about-section';
 
 export default function Home() {
   /** State to show loading state when user comes to the page or refreshes */
@@ -30,9 +31,7 @@ export default function Home() {
       </AnimatePresence>
       <Header />
       <HeroSection />
-      <div
-        style={{ height: '100vh', background: 'black', position: 'relative' }}
-      ></div>
+      <AboutSection />
     </main>
   );
 }

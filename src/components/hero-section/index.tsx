@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import { ScrollTrigger } from 'gsap/all';
 import { HeroSVG } from '@/utils';
 import { slideUpContainer, opacity } from './animation';
-import classes from './hero-section.module.scss';
+import classes from './style.module.scss';
 
 gsap.registerPlugin(ScrollTrigger);
 
