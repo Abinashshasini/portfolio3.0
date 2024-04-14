@@ -1,19 +1,21 @@
-export const slideUpFirst = {
+export const slideUpContainer = {
   initial: {
     y: 400,
   },
   enter: {
     y: 0,
-    transition: { duration: 1, ease: [0.33, 1, 0.68, 1], delay: 3 },
+    transition: { duration: 1.2, ease: [0.33, 1, 0.68, 1], delay: 3 },
   },
 };
 
-export const slideUpSecond = {
+export const opacity = {
   initial: {
-    y: 400,
+    opacity: 0,
+    y: 50,
   },
   enter: {
     y: 0,
-    transition: { duration: 1, ease: [0.33, 1, 0.68, 1], delay: 3.2 },
+    opacity: 1,
+    transition: { duration: 1, delay: 4 },
   },
 };

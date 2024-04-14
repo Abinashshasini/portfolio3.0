@@ -30,7 +30,9 @@ export default function Home() {
       </AnimatePresence>
       <Header />
       <HeroSection />
-      <div style={{ height: '100vh' }}></div>
+      <div
+        style={{ height: '100vh', background: 'black', position: 'relative' }}
+      ></div>
     </main>
   );
 }
