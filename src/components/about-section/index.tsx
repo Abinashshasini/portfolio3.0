@@ -15,9 +15,13 @@ const AboutSection = () => {
           captivating user experience.
         </p>
       </div>
-      {skillsData.map((element: IData, index: number) => (
-        <SkillCard index={index} data={element} key={element.id} />
-      ))}
+      <div style={{ marginTop: '3rem', width: '100%' }}>
+        <div className={classes.skillsWrp}>
+          {skillsData.map((element: IData, index: number) => (
+            <SkillCard index={index} data={element} key={element.id} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

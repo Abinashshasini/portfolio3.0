@@ -1,16 +1,31 @@
 .container {
   color: white;
   width: 100%;
-  margin-top: 3rem;
-  top: calc(20vh + 0em);
-  margin-bottom: 17.25em;
-  border-top: 1px solid rgb(57 54 50 / 1);
+  border-top: 1px solid var(--text-primary);
   position: sticky;
+  top: 0;
+  background: var(--black-primary);
+  padding: 0 0.5rem;
+
+  &[data-index='1'] {
+    top: calc(20vh + 0em);
+    margin-bottom: 17.25em;
+  }
+
+  &[data-index='2'] {
+    top: calc(20vh + 7em);
+    margin-bottom: 11.5em;
+  }
+
+  &[data-index='3'] {
+    top: calc(20vh + 12em);
+    margin-bottom: 5.75em;
+  }
 
   .headingCnt {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    column-gap: 1rem;
 
     & > img {
       width: 1.5rem;
@@ -24,6 +39,88 @@
       font-size: 1.7rem;
       padding-top: 1.75rem;
       padding-bottom: 1.75rem;
+    }
+  }
+
+  .descAndSkillsCnt {
+    padding-bottom: 3rem;
+
+    & > p {
+      font-size: 1.125rem;
+      padding-top: 0.5rem;
+      max-width: 40ch;
+      color: var(--text-tertiary);
+      opacity: 0.8;
+    }
+
+    & > .skillSets {
+      padding-top: 2rem;
+      row-gap: 1rem;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      & > p {
+        font-weight: 700;
+        font-size: 1.6rem;
+        color: var(--text-tertiary);
+      }
+    }
+  }
+
+  .indexElement {
+    opacity: 0.5;
+    color: var(--text-primary);
+    line-height: 92.5%;
+    font-size: clamp(8rem, -0.057rem + 20.0714vw, 20rem);
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+    z-index: -10;
+    bottom: 0;
+    position: absolute;
+    font-weight: 700;
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    .headingCnt {
+      column-gap: 1.5rem;
+      & > img {
+        width: 2rem;
+        height: 2rem;
+      }
+
+      & > h3 {
+        font-size: 3.5rem;
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+      }
+    }
+
+    .descAndSkillsCnt {
+      padding-bottom: 3rem;
+      display: flex;
+      justify-content: space-between;
+      width: 90%;
+
+      & > p {
+        font-size: 1.5rem;
+        max-width: 55ch;
+      }
+
+      & > .skillSets {
+        padding-top: 0;
+        width: 35%;
+
+        & > p {
+          font-weight: 700;
+          font-size: 2.5rem;
+          color: var(--text-tertiary);
+        }
+      }
     }
   }
 }

@@ -13,8 +13,14 @@ export default function Home() {
   /** Effect to initialise the locomotive scroll and remove the preloader after 3s */
   useEffect(() => {
     (async () => {
-      const LocomotiveScroll = (await import('locomotive-scroll')).default;
-      new LocomotiveScroll();
+      const Lenis = (await import('@studio-freight/lenis')).default;
+      const lenis = new Lenis();
+
+      function raf(time: any) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
 
       setTimeout(() => {
         setIsLoading(false);
@@ -32,6 +38,9 @@ export default function Home() {
       <Header />
       <HeroSection />
       <AboutSection />
+      <div style={{ height: '100vh', background: 'red' }}></div>
+      <div style={{ height: '100vh', background: 'red' }}></div>
+      <div style={{ height: '100vh', background: 'red' }}></div>
       <div style={{ height: '100vh', background: 'red' }}></div>
     </main>
   );

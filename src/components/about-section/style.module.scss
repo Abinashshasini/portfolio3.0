@@ -2,7 +2,7 @@
   background: var(--black-primary);
   min-height: 100vh;
   position: relative;
-  border-radius: 2rem 2rem 0 0;
+  border-radius: 1.5rem 1.5rem 0 0;
   color: white;
 
   .heading {
@@ -26,6 +26,15 @@
       flex: 1;
       opacity: 0.8;
     }
+  }
+
+  .skillsWrp {
+    margin-top: 3rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 4rem;
   }
 }
 
