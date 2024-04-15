@@ -3,4 +3,5 @@ export type IData = {
   title: string;
   description: string;
   technology: string[];
+  icon: string;
 };
