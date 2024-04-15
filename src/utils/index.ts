@@ -42,37 +42,37 @@ export const projectData = [
   {
     id: '#01',
     img: project1,
-    year: 2022,
-    technology: ['React JS', 'JavaScript', 'HTML'],
-    title: 'Leetcode clone',
+    year: 2024,
+    technology: ['React JS', 'Node JS', 'MongodB'],
+    title: 'Detailed Leetcode Clone.',
     description:
-      'As a React Native developer, I craft cross-platform apps for seamless As a React Native developer, I craft cross-platform apps for seamless',
+      'Crafted a LeetCode-inspired platform with ReactJS, NodeJS, and MongoDB, delivering a seamless coding experience. Learned full-stack development and database architecture.',
   },
   {
     id: '#02',
     img: project2,
-    year: 2022,
-    technology: ['React JS', 'JavaScript', 'HTML'],
-    title: 'Leetcode clone',
+    year: 2023,
+    technology: ['Next JS', 'JavaScript', 'SSR'],
+    title: 'Complete TMDB Clone.',
     description:
-      'As a React Native developer, I craft cross-platform apps for seamless As a React Native developer, I craft cross-platform apps for seamless',
+      "Built TMDB's official website with Next.js, leveraging SSR for peak performance. Expertly balanced frontend finesse with backend efficiency.",
   },
   {
     id: '#03',
     img: project3,
-    year: 2022,
-    technology: ['React JS', 'JavaScript', 'HTML'],
-    title: 'Leetcode clone',
+    year: 2024,
+    technology: ['React JS', 'Three JS', 'GSAP'],
+    title: 'Apple iPhone 15 Website.',
     description:
-      'As a React Native developer, I craft cross-platform apps for seamless As a React Native developer, I craft cross-platform apps for seamless',
+      'Crafted an engaging Apple iPhone 15 website with React.js, Three.js, and GSAP, seamlessly blending stunning visuals with smooth animations for an immersive user experience.',
   },
   {
     id: '#04',
     img: project4,
     year: 2022,
-    technology: ['React JS', 'JavaScript', 'HTML'],
-    title: 'Leetcode clone',
+    technology: ['Next JS', 'Trivia API', 'HTML', 'CSS'],
+    title: 'Fun Trivia Quiz App.',
     description:
-      'As a React Native developer, I craft cross-platform apps for seamless As a React Native developer, I craft cross-platform apps for seamless',
+      'Engineered a dynamic trivia quiz app using React.js, JavaScript, and trivia APIs, delivering an engaging and interactive experience for users while honing skills in frontend development and API integration.',
   },
 ];
