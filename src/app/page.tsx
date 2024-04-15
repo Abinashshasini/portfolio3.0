@@ -5,6 +5,7 @@ import Header from '@/components/header';
 import Preloader from '@/components/preloader';
 import HeroSection from '@/components/hero-section';
 import AboutSection from '@/components/about-section';
+import Projects from '@/components/projects';
 
 export default function Home() {
   /** State to show loading state when user comes to the page or refreshes */
@@ -16,6 +17,7 @@ export default function Home() {
       const Lenis = (await import('@studio-freight/lenis')).default;
       const lenis = new Lenis();
 
+      /** Functiont to initiate smooth scroll */
       function raf(time: any) {
         lenis.raf(time);
         requestAnimationFrame(raf);
@@ -38,8 +40,7 @@ export default function Home() {
       <Header />
       <HeroSection />
       <AboutSection />
-      <div style={{ height: '100vh', background: 'red' }}></div>
-      <div style={{ height: '100vh', background: 'red' }}></div>
+      <Projects />
       <div style={{ height: '100vh', background: 'red' }}></div>
       <div style={{ height: '100vh', background: 'red' }}></div>
     </main>

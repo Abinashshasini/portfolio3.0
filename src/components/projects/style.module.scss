@@ -1,0 +1,110 @@
+@mixin comonYearTechCss {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  border: 2px solid var(--text-base-deep);
+  color: var(--text-tertiary);
+  border-radius: 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.container {
+  background: var(--black-primary);
+  position: relative;
+
+  .headingCnt {
+    & > h2 {
+      color: var(--text-tertiary);
+      font-size: clamp(3.5rem, 2.3571rem + 4.5143vi, 10.5rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      transition-property: all;
+      transition-duration: 0.5s;
+      padding-bottom: 3rem;
+      line-height: 1;
+
+      & > span {
+        display: inline-block;
+      }
+
+      & > sup {
+        font-size: 75%;
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline;
+        line-height: 130%;
+        font-weight: 500;
+        top: -0.5em;
+        color: var(--text-base-deep);
+      }
+    }
+  }
+
+  .projectDetailsCnt {
+    margin-bottom: 1rem;
+    .projectDetailImg {
+      transition-duration: 0.3s;
+      transition-property: all;
+      border-radius: 0.25rem;
+      overflow: hidden;
+      margin-bottom: 1rem;
+      transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+
+      & > img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .projectDetailTechnology {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 1rem;
+
+      .yearCnt {
+        @include comonYearTechCss();
+      }
+
+      .techCnt {
+        @include comonYearTechCss();
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.7rem;
+
+        & > span::after {
+          content: '';
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background-color: var(--text-base-deep);
+          display: inline-block;
+          margin-left: 5px;
+        }
+
+        & > span:last-child::after {
+          content: none;
+        }
+      }
+    }
+
+    & > h3 {
+      color: var(--text-tertiary);
+      font-weight: 700;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      display: inline-block;
+      padding: 0.75rem 0;
+    }
+
+    & > p {
+      color: var(--text-tertiary);
+      font-weight: 500;
+      font-size: 1rem;
+      text-transform: capitalize;
+      display: inline-block;
+      margin-left: 1rem;
+    }
+  }
+}

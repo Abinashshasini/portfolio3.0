@@ -3,6 +3,10 @@ import hero from '/public/assets/images/hero.svg';
 import shape1 from '/public/assets/images/shape1.svg';
 import shape2 from '/public/assets/images/shape2.svg';
 import shape3 from '/public/assets/images/shape3.svg';
+import project1 from '/public/assets/images/project1.webp';
+import project2 from '/public/assets/images/project2.webp';
+import project3 from '/public/assets/images/project3.webp';
+import project4 from '/public/assets/images/project4.webp';
 
 export const MenuIcon = menu;
 export const HeroSVG = hero;
@@ -31,5 +35,40 @@ export const skillsData = [
       'As a React Native developer, I craft cross-platform apps for seamless user experiences. Passionate about mobile tech, I thrive on bringing ideas to life in app development.',
     technology: ['React Native', 'Expo', 'Android/IOS Development'],
     icon: shape3,
+  },
+];
+
+export const projectData = [
+  {
+    id: '#01',
+    img: project1,
+    year: 2022,
+    technology: ['React JS', 'JavaScript', 'HTML', 'CSS'],
+    title: 'Leetcode clone',
+    description: 'Frontent Development',
+  },
+  {
+    id: '#02',
+    img: project2,
+    year: 2022,
+    technology: ['React JS', 'JavaScript', 'HTML', 'CSS'],
+    title: 'Leetcode clone',
+    description: 'Frontent Development',
+  },
+  {
+    id: '#03',
+    img: project3,
+    year: 2022,
+    technology: ['React JS', 'JavaScript', 'HTML', 'CSS'],
+    title: 'Leetcode clone',
+    description: 'Frontent Development',
+  },
+  {
+    id: '#04',
+    img: project4,
+    year: 2022,
+    technology: ['React JS', 'JavaScript', 'HTML', 'CSS'],
+    title: 'Leetcode clone',
+    description: 'Frontent Development',
   },
 ];

@@ -1,7 +1,7 @@
 import React from 'react';
 import SkillCard from './skills-card';
 import { skillsData } from '@/utils';
-import { IData } from '@/types';
+import { TAboutData } from '@/types';
 import classes from './style.module.scss';
 
 const AboutSection = () => {
@@ -15,12 +15,10 @@ const AboutSection = () => {
           captivating user experience.
         </p>
       </div>
-      <div style={{ marginTop: '3rem', width: '100%' }}>
-        <div className={classes.skillsWrp}>
-          {skillsData.map((element: IData, index: number) => (
-            <SkillCard index={index} data={element} key={element.id} />
-          ))}
-        </div>
+      <div className={classes.skillsWrp}>
+        {skillsData.map((element: TAboutData, index: number) => (
+          <SkillCard index={index} data={element} key={element.id} />
+        ))}
       </div>
     </div>
   );

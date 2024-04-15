@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import Image from 'next/image';
-import { IData } from '@/types';
+import { TAboutData } from '@/types';
 import classes from './style.module.scss';
 
 type IProps = {
   index: number;
-  data: IData;
+  data: TAboutData;
 };
 
 const SkillCard: FC<IProps> = ({ index, data }) => {
