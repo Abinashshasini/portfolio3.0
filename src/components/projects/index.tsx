@@ -19,27 +19,29 @@ const Projects = () => {
       </div>
 
       {/* Projects section */}
-      {projectData.map((element, index) => (
-        <div
-          key={element.id}
-          data-index={index}
-          className={classes.projectDetailsCnt}
-        >
-          <div className={classes.projectDetailImg}>
-            <img src={element.img.src} alt="project image" />
-          </div>
-          <div className={classes.projectDetailTechnology}>
-            <div className={classes.yearCnt}>{element.year}</div>
-            <div className={classes.techCnt}>
-              {element.technology.map((childElement) => (
-                <span key={index + childElement}>{childElement}</span>
-              ))}
+      <div className={classes.projectsCardWrp}>
+        {projectData.map((element, index) => (
+          <div
+            key={element.id}
+            data-index={index + 1}
+            className={classes.projectCardCnt}
+          >
+            <div className={classes.projectDetailImg}>
+              <img src={element.img.src} alt="project image" />
             </div>
+            <div className={classes.projectDetailTechnology}>
+              <div className={classes.yearCnt}>{element.year}</div>
+              <div className={classes.techCnt}>
+                {element.technology.map((childElement) => (
+                  <span key={index + childElement}>{childElement}</span>
+                ))}
+              </div>
+            </div>
+            <h3>{element.title}</h3>
+            <p>{element.description}</p>
           </div>
-          <h3>{element.title}</h3>
-          <p>{element.description}</p>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

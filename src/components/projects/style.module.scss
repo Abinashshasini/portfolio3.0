@@ -1,11 +1,11 @@
 @mixin comonYearTechCss {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding: 0.1rem 0.75rem;
   border: 2px solid var(--text-base-deep);
   color: var(--text-tertiary);
   border-radius: 1.5rem;
   font-size: 1rem;
   font-weight: 500;
+  opacity: 0.8;
 }
 
 .container {
@@ -40,71 +40,164 @@
     }
   }
 
-  .projectDetailsCnt {
-    margin-bottom: 1rem;
-    .projectDetailImg {
-      transition-duration: 0.3s;
-      transition-property: all;
-      border-radius: 0.25rem;
-      overflow: hidden;
+  .projectsCardWrp {
+    display: grid;
+    column-gap: 3.5rem;
+    row-gap: 2.5rem;
+    padding-bottom: 5rem;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+
+    .projectCardCnt {
       margin-bottom: 1rem;
-      transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 
-      & > img {
-        width: 100%;
-        height: auto;
+      .projectDetailImg {
+        border-radius: 0.25rem;
+        overflow: hidden;
+        margin-bottom: 1rem;
+        transition: all 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+
+        & > img {
+          width: 100%;
+          height: auto;
+          transition: all 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        &:hover {
+          border-radius: 0.75rem;
+
+          & > img {
+            transform: scale(1.1);
+          }
+        }
       }
-    }
 
-    .projectDetailTechnology {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      gap: 1rem;
-
-      .yearCnt {
-        @include comonYearTechCss();
-      }
-
-      .techCnt {
-        @include comonYearTechCss();
+      .projectDetailTechnology {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
-        gap: 0.7rem;
+        gap: 1rem;
 
-        & > span::after {
-          content: '';
-          width: 5px;
-          height: 5px;
-          border-radius: 50%;
-          background-color: var(--text-base-deep);
-          display: inline-block;
-          margin-left: 5px;
+        .yearCnt {
+          @include comonYearTechCss();
         }
 
-        & > span:last-child::after {
-          content: none;
+        .techCnt {
+          @include comonYearTechCss();
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 0.7rem;
+
+          & > span::after {
+            content: '';
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: var(--text-base-deep);
+            display: inline-block;
+            margin-left: 5px;
+          }
+
+          & > span:last-child::after {
+            content: none;
+          }
         }
       }
-    }
 
-    & > h3 {
-      color: var(--text-tertiary);
-      font-weight: 700;
-      font-size: 1.5rem;
-      text-transform: uppercase;
-      display: inline-block;
-      padding: 0.75rem 0;
-    }
+      & > h3 {
+        color: var(--text-tertiary);
+        font-weight: 700;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        padding-top: 0.75rem;
+      }
 
-    & > p {
-      color: var(--text-tertiary);
-      font-weight: 500;
-      font-size: 1rem;
-      text-transform: capitalize;
-      display: inline-block;
-      margin-left: 1rem;
+      & > p {
+        color: var(--text-base-deep);
+        font-weight: 500;
+        font-size: 1rem;
+        padding-top: 0.25rem;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    .projectsCardWrp {
+      row-gap: 5rem;
+      column-gap: 6rem;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+
+      .projectCardCnt {
+        .projectDetailImg {
+          border-radius: 0.75rem;
+          margin-bottom: 2rem;
+
+          &:hover {
+            border-radius: 1.25rem;
+          }
+        }
+
+        &[data-index='1'] {
+          grid-column: span 7 / span 7;
+        }
+
+        &[data-index='2'] {
+          grid-column: span 5 / span 5;
+          padding-top: 5rem;
+        }
+
+        &[data-index='3'] {
+          grid-column: span 5 / span 5;
+          padding-top: 5rem;
+        }
+
+        &[data-index='4'] {
+          grid-column: span 7 / span 7;
+        }
+
+        .projectDetailTechnology {
+          .yearCnt {
+            font-size: 1.3rem;
+            padding: 0.2rem 1.5rem;
+            border-radius: 1.5rem;
+          }
+
+          .techCnt {
+            font-size: 1.3rem;
+            gap: 1rem;
+            padding: 0.2rem 1.5rem;
+            border-radius: 1.5rem;
+
+            & > span::after {
+              content: '';
+              width: 5px;
+              height: 5px;
+              border-radius: 50%;
+              background-color: var(--text-base-deep);
+              display: inline-block;
+              margin-left: 5px;
+            }
+
+            & > span:last-child::after {
+              content: none;
+            }
+          }
+        }
+
+        & > h3 {
+          font-size: 3rem;
+          padding-top: 0.75rem;
+          transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        & > p {
+          font-size: 1.2rem;
+          transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+      }
     }
   }
 }

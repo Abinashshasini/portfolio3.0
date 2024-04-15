@@ -43,32 +43,36 @@ export const projectData = [
     id: '#01',
     img: project1,
     year: 2022,
-    technology: ['React JS', 'JavaScript', 'HTML', 'CSS'],
+    technology: ['React JS', 'JavaScript', 'HTML'],
     title: 'Leetcode clone',
-    description: 'Frontent Development',
+    description:
+      'As a React Native developer, I craft cross-platform apps for seamless As a React Native developer, I craft cross-platform apps for seamless',
   },
   {
     id: '#02',
     img: project2,
     year: 2022,
-    technology: ['React JS', 'JavaScript', 'HTML', 'CSS'],
+    technology: ['React JS', 'JavaScript', 'HTML'],
     title: 'Leetcode clone',
-    description: 'Frontent Development',
+    description:
+      'As a React Native developer, I craft cross-platform apps for seamless As a React Native developer, I craft cross-platform apps for seamless',
   },
   {
     id: '#03',
     img: project3,
     year: 2022,
-    technology: ['React JS', 'JavaScript', 'HTML', 'CSS'],
+    technology: ['React JS', 'JavaScript', 'HTML'],
     title: 'Leetcode clone',
-    description: 'Frontent Development',
+    description:
+      'As a React Native developer, I craft cross-platform apps for seamless As a React Native developer, I craft cross-platform apps for seamless',
   },
   {
     id: '#04',
     img: project4,
     year: 2022,
-    technology: ['React JS', 'JavaScript', 'HTML', 'CSS'],
+    technology: ['React JS', 'JavaScript', 'HTML'],
     title: 'Leetcode clone',
-    description: 'Frontent Development',
+    description:
+      'As a React Native developer, I craft cross-platform apps for seamless As a React Native developer, I craft cross-platform apps for seamless',
   },
 ];
