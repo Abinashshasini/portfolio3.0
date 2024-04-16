@@ -6,6 +6,7 @@ import Preloader from '@/components/preloader';
 import HeroSection from '@/components/hero-section';
 import AboutSection from '@/components/about-section';
 import Projects from '@/components/projects';
+import Experience from '@/components/experience';
 
 export default function Home() {
   /** State to show loading state when user comes to the page or refreshes */
@@ -41,8 +42,8 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <Projects />
-      <div style={{ height: '100vh', background: 'red' }}></div>
-      <div style={{ height: '100vh', background: 'red' }}></div>
+      <Experience />
+      <div style={{ height: '100vh', background: 'yellow' }}></div>
     </main>
   );
 }

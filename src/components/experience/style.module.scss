@@ -1,0 +1,16 @@
+.mtNegative {
+  margin-top: -100svh;
+
+  .mtPositive {
+    height: 100svh;
+    position: relative;
+  }
+}
+
+.container {
+  background: yellowgreen;
+  padding-top: 3.5rem;
+  min-height: 70vh;
+  bottom: -20rem;
+  position: sticky;
+}
