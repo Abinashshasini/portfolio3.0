@@ -8,9 +8,42 @@
 }
 
 .container {
-  background: yellowgreen;
   padding-top: 3.5rem;
   min-height: 70vh;
-  bottom: -20rem;
+  bottom: -10rem;
   position: sticky;
+  background-color: var(--bg-primary);
+
+  & > h2 {
+    font-size: clamp(3.5rem, 2.3571rem + 4.5143vi, 10.5rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.5s;
+  }
+
+  .headingCnt {
+    & > h2 {
+      color: var(--text-primary);
+      font-size: clamp(3.5rem, 2.3571rem + 4.5143vi, 10.5rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      transition: all 0.5s;
+      padding-bottom: 3rem;
+
+      & > span {
+        display: inline-block;
+      }
+
+      & > sup {
+        font-size: 75%;
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline;
+        line-height: 130%;
+        font-weight: 500;
+        top: -0.5em;
+        color: var(--text-secondary);
+      }
+    }
+  }
 }

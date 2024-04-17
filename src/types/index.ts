@@ -14,3 +14,10 @@ export type TProjectData = {
   img: string;
   year: number;
 };
+
+export type TExperienceData = {
+  id: string;
+  company: string;
+  position: string;
+  description: string[];
+};

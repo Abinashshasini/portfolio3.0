@@ -9,7 +9,8 @@
     --text-tertiary: #d1d1c7;
     --text-base-deep: #a29e9a;
     --bg-primary: #e8e8e3;
-    --bg-secondary: #B3B3A3
+    --bg-secondary: #B3B3A3;
+    --bg-tertiary: #e1e1db
 }
 
 /* Font Family */
@@ -37,7 +38,7 @@ body {
     font-optical-sizing: auto;
     font-style: normal;
     min-height: 100svh;
-    background-color: #e8e8e3;
+    background-color: var(--bg-primary);
 }
 
 body:after,
@@ -74,6 +75,8 @@ h6,
 p {
     margin: 0;
     padding: 0;
+    text-wrap: balance;
+    line-height: 1;
 }
 
 img,
