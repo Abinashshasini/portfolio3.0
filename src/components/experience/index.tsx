@@ -1,8 +1,8 @@
 import React from 'react';
-import classes from './style.module.scss';
 import ExperienceCard from './experience-card';
 import { experienceData } from '@/utils';
 import { TExperienceData } from '@/types';
+import classes from './style.module.scss';
 
 const Experience = () => {
   return (
@@ -15,7 +15,7 @@ const Experience = () => {
             <span>Experience</span>
             <sup>
               <span>(</span>
-              <span>3</span>
+              <span>2</span>
               <span>)</span>
             </sup>
           </h2>

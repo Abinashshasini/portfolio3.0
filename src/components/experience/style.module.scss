@@ -10,7 +10,7 @@
 .container {
   padding-top: 3.5rem;
   min-height: 70vh;
-  bottom: -10rem;
+  bottom: -20rem;
   position: sticky;
   background-color: var(--bg-primary);
 
@@ -28,7 +28,7 @@
       font-weight: 700;
       text-transform: uppercase;
       transition: all 0.5s;
-      padding-bottom: 3rem;
+      padding-bottom: 1rem;
 
       & > span {
         display: inline-block;

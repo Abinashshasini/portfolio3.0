@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import classes from './stlye.module.scss';
 import { TExperienceData } from '@/types';
+import classes from './stlye.module.scss';
 
 type Tprops = {
   data: TExperienceData;
@@ -10,20 +10,17 @@ type Tprops = {
 const ExperienceCard: FC<Tprops> = ({ data, index }) => {
   return (
     <div className={classes.container}>
-      <div>
-        <div>
-          <div>{index + 1}</div>
-          <div>
-            <h4>{data.company}</h4>
-            <p>{data.position}</p>
-          </div>
+      <div className={classes.cnamePositionCnt}>
+        <div className={classes.cnameAndPosWrp}>
+          <h4>{data.company}</h4>
+          <p>{data.position}</p>
         </div>
-        <ul>
-          {data.description.map((desc: string) => (
-            <li key={data.id}>{desc}</li>
-          ))}
-        </ul>
       </div>
+      <ul>
+        {data.description.map((desc: string) => (
+          <li key={data.id}>{desc}</li>
+        ))}
+      </ul>
     </div>
   );
 };

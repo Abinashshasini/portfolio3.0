@@ -80,29 +80,20 @@ export const projectData = [
 export const experienceData = [
   {
     id: '#01',
-    company: 'Justdial.com | 2022 - Present',
+    company: 'Justdial | Feb 2022 - Present',
     position: 'Software Engineer',
     description: [
-      'Collaborated with designers and backend developers to implement responsive and visually appealing user interfaces using React and Javascript',
-      'Implemented performance optimization techniques, including web-vitals optimization, which yielded an impressive enhancement of nearly 30% in the overall application speed.',
+      'Collaborated with designers and backend developers to build responsive UIs using React and JavaScript.',
+      'Ensured seamless cross-browser compatibility and implemented performance optimizations, boosting application speed by 30%.',
     ],
   },
   {
     id: '#02',
-    company: 'ThinkZone Pvt Ltd | 2021 - 2022',
+    company: 'ThinkZone | Feb 2021 - Jan 2022',
     position: 'Software Developer',
     description: [
-      'Led the development of a report website using React, providing users with insightful data visualizations and interactive reports.',
-      'Successfully migrated a comprehensive Ionic Angular application to React Native, accomplishing the transition with a focus on delivering superior-quality, high-performance user interfaces. Additionally, extended support for cross-platform mobile applications was established, ensuring a seamless and consistent user experience across various devices.',
-    ],
-  },
-  {
-    id: '#03',
-    company: 'EXPOSYS Data Labs | 2020 - 2021',
-    position: 'Software Developer Intern',
-    description: [
-      'Learned React and Javascript and participated in different activities and tasks, gained insight into software development practices and procedures.',
-      'Created one Fully functional Language translator that can translate 30+ languages. Used IBM Watson language-translator API with Next.js, Node.js, and Express to develop this application and deployed in Vercel',
+      'Led the development of a React-based report website, offering users insightful data visualizations and interactive reports.',
+      'Successfully migrated a comprehensive Ionic Angular application to React Native, prioritizing superior-quality, high-performance user interfaces.',
     ],
   },
 ];
