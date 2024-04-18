@@ -7,9 +7,11 @@ import project2 from '/public/assets/images/project2.webp';
 import project3 from '/public/assets/images/project3.webp';
 import project4 from '/public/assets/images/project4.webp';
 import logo from '/public/assets/images/logo.svg';
+import skills from '/public/assets/images/skills.svg';
 
 export const HeroSVG = hero;
 export const LogoIcn = logo;
+export const skillsIn = skills;
 
 export const skillsData = [
   {
