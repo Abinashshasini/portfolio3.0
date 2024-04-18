@@ -14,7 +14,7 @@
     margin-bottom: 5vw;
 
     & > h2 {
-      font-size: 60px;
+      font-size: clamp(3.5rem, 2.3571rem + 4.5143vi, 10.5rem);
       flex: 1;
       font-weight: bold;
       letter-spacing: 0.5px;
@@ -58,7 +58,7 @@
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1200px) {
   .container {
     padding: 0 140px;
     height: 100vh;
@@ -66,14 +66,14 @@
     .textWrp {
       flex-direction: row;
       & > h2 {
-        font-size: 240px;
+        font-size: clamp(3.5rem, 12vw, 15vw);
       }
 
       & > p {
-        width: 20%;
-        font-size: 1rem;
+        width: 25%;
+        font-size: 1.2rem;
         line-height: 1.5;
-        margin-top: 3vw;
+        margin-top: 1.5vw;
       }
     }
 
@@ -82,6 +82,10 @@
 
       & > h2 {
         text-align: right;
+      }
+
+      & > p {
+        padding-left: 0;
       }
     }
   }

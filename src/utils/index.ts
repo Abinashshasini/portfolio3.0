@@ -1,4 +1,3 @@
-import menu from '/public/assets/images/menu.svg';
 import hero from '/public/assets/images/hero.svg';
 import shape1 from '/public/assets/images/shape1.svg';
 import shape2 from '/public/assets/images/shape2.svg';
@@ -7,9 +6,10 @@ import project1 from '/public/assets/images/project1.webp';
 import project2 from '/public/assets/images/project2.webp';
 import project3 from '/public/assets/images/project3.webp';
 import project4 from '/public/assets/images/project4.webp';
+import logo from '/public/assets/images/logo.svg';
 
-export const MenuIcon = menu;
 export const HeroSVG = hero;
+export const LogoIcn = logo;
 
 export const skillsData = [
   {
