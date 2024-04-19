@@ -1,9 +1,9 @@
 import React from 'react';
 import ExperienceCard from './experience-card';
+import Image from 'next/image';
 import { experienceData, skillsIn } from '@/utils';
 import { TExperienceData } from '@/types';
 import classes from './style.module.scss';
-import Image from 'next/image';
 
 const Experience = () => {
   return (
@@ -21,11 +21,13 @@ const Experience = () => {
             </sup>
           </h2>
         </div>
-        {experienceData.map((element: TExperienceData, index: number) => (
-          <ExperienceCard data={element} key={element.id} index={index} />
-        ))}
         <div className={classes.skillsCnt}>
           <Image src={skillsIn} alt="balo" width={100} height={100} />
+        </div>
+        <div className={classes.experienceCnt}>
+          {experienceData.map((element: TExperienceData, index: number) => (
+            <ExperienceCard data={element} key={element.id} index={index} />
+          ))}
         </div>
       </div>
     </div>

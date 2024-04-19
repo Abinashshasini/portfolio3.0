@@ -86,7 +86,7 @@ export const experienceData = [
     position: 'Software Engineer',
     description: [
       'Collaborated with designers and backend developers to build responsive UIs using React and JavaScript.',
-      'Ensured seamless cross-browser compatibility and implemented performance optimizations, boosting application speed by 30%.',
+      // 'Ensured seamless cross-browser compatibility and implemented performance optimizations, boosting application speed by 30%.',
     ],
   },
   {
@@ -95,7 +95,7 @@ export const experienceData = [
     position: 'Software Developer',
     description: [
       'Led the development of a React-based report website, offering users insightful data visualizations and interactive reports.',
-      'Successfully migrated a comprehensive Ionic Angular application to React Native, prioritizing superior-quality, high-performance user interfaces.',
+      // 'Successfully migrated a comprehensive Ionic Angular application to React Native, prioritizing superior-quality, high-performance user interfaces.',
     ],
   },
 ];
