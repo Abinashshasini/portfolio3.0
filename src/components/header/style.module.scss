@@ -63,14 +63,32 @@
     outline: none;
     border: none;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 
     & > span {
+      position: absolute;
       width: 1.75rem;
       height: 2px;
       display: block;
       background: var(--black-primary);
       border-radius: 9999px;
-      transition: all 0.3s;
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    & > span:first-child {
+      transform: translateY(-0.25rem);
+    }
+
+    & > span:last-child {
+      transform: translateY(0.25rem);
+    }
+
+    & > span:first-child[data-open='true'] {
+      transform: rotate(45deg);
+    }
+
+    & > span:last-child[data-open='true'] {
+      transform: rotate(-45deg);
     }
 
     &[data-visible='true'] {

@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { LogoIcn } from '@/utils';
 import classes from './style.module.scss';
 
-const Header = () => {
+const Header: FC = () => {
   /** Required states and refs */
-  const [showMenuButton, setShowMenuButton] = useState(false);
+  const [showMenuButton, setShowMenuButton] = useState<boolean>(false);
+  const [showSideMenu, setShowSideMenu] = useState<boolean>(false);
 
   /** GSAP hook for animation of list elements */
   useGSAP(() => {
@@ -67,9 +68,10 @@ const Header = () => {
         aria-controls="menu"
         data-visible={showMenuButton}
         className={classes.hamBurgerMenu}
+        onClick={() => setShowSideMenu(!showSideMenu)}
       >
-        <span></span>
-        <span></span>
+        <span data-open={showSideMenu}></span>
+        <span data-open={showSideMenu}></span>
       </button>
     </header>
   );
