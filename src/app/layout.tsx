@@ -1,12 +1,30 @@
 import type { Metadata } from 'next';
-import { Source_Sans_3 } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
 
-const roboto = Source_Sans_3({
-  weight: ['400', '700', '500', '500', '300'],
-  style: ['normal', 'italic'],
-  subsets: ['latin'],
-  display: 'swap',
+const roboto = localFont({
+  src: [
+    {
+      path: '../../public/fonts/OverusedGrotesk-Light.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/OverusedGrotesk-Medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/OverusedGrotesk-Bold.woff2',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/OverusedGrotesk-ExtraBold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
 });
 
 export const metadata: Metadata = {

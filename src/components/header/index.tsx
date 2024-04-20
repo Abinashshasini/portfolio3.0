@@ -3,6 +3,9 @@ import Image from 'next/image';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { LogoIcn } from '@/utils';
+import { AnimatePresence } from 'framer-motion';
+import SideMenu from '../menu';
+import Magnetic from '@/commons/magnetic';
 import classes from './style.module.scss';
 
 const Header: FC = () => {
@@ -40,23 +43,35 @@ const Header: FC = () => {
       {!showMenuButton && (
         <>
           <a aria-label="Bake to Home">
-            <Image src={LogoIcn} alt="logo" width={100} height={100} />
+            <Magnetic>
+              <Image src={LogoIcn} alt="logo" width={100} height={100} />
+            </Magnetic>
           </a>
           <ul className={classes.menuContainer}>
             <a href="/#services">
-              <li id="hero_list-item">Services</li>
+              <Magnetic>
+                <li id="hero_list-item">Services</li>
+              </Magnetic>
             </a>
             <a href="#work">
-              <li id="hero_list-item">Works</li>
+              <Magnetic>
+                <li id="hero_list-item">Works</li>
+              </Magnetic>
             </a>
             <a href="/#about">
-              <li id="hero_list-item">About</li>
+              <Magnetic>
+                <li id="hero_list-item">About</li>
+              </Magnetic>
             </a>
             <a href="/#roles">
-              <li id="hero_list-item">Roles</li>
+              <Magnetic>
+                <li id="hero_list-item">Roles</li>
+              </Magnetic>
             </a>
             <a href="/#contact">
-              <li id="hero_list-item">Contact</li>
+              <Magnetic>
+                <li id="hero_list-item">Contact</li>
+              </Magnetic>
             </a>
           </ul>
         </>
@@ -73,6 +88,10 @@ const Header: FC = () => {
         <span data-open={showSideMenu}></span>
         <span data-open={showSideMenu}></span>
       </button>
+
+      <AnimatePresence mode="wait">
+        {showSideMenu && <SideMenu />}
+      </AnimatePresence>
     </header>
   );
 };
