@@ -5,15 +5,15 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { motion } from 'framer-motion';
 import { ScrollTrigger } from 'gsap/all';
-import { HeroSVG } from '@/utils';
 import { slideUpContainer, opacity } from './animation';
+import AnimatedText from '@/commons/animated-text';
+import { ArrowIcon, HeroSVG } from '@/utils';
 import classes from './style.module.scss';
+import Magnetic from '@/commons/magnetic';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const HeroSection = () => {
-  const titleTextOne = "HI! I'M ABINASH";
-  const titleTextTwo = 'WEB DEVELOPER';
   /**
    * GSAP hook to scale the circle on landing.
    * decrease the opacity of the text's on scroll.
@@ -37,12 +37,18 @@ const HeroSection = () => {
       opacity: 0,
     });
 
-    gsap.to('#hero_title_letters', {
-      y: 0,
-      stagger: 0.03,
-      delay: 2.9,
-      duration: 0.1,
-    });
+    gsap.fromTo(
+      '#hero_arrow_icn',
+      { opacity: 0, scale: 0.3, y: 30 },
+      {
+        y: 0,
+        scale: 1,
+        delay: 4.5,
+        duration: 0.8,
+        opacity: 1,
+        ease: 'power1.inOut',
+      }
+    );
   }, []);
 
   return (
@@ -54,42 +60,64 @@ const HeroSection = () => {
         className={classes.container}
         id="hero_text_cnt"
       >
-        <div className={classes.textWrp}>
-          <h2 className="league-gothic">
-            {titleTextOne.split('').map((letter, index) => (
-              <span key={index + letter} id="hero_title_letters">
-                {letter}
-              </span>
-            ))}
-          </h2>
-          <motion.p variants={opacity} animate="enter" initial="initial">
-            I have been working in the industry since 2021, creating digital
-            products that are both functional and enjoyable for end users.
-          </motion.p>
-        </div>
-        <div className={classes.textWrp}>
-          <h2 className="league-gothic">
-            {titleTextTwo.split('').map((letter, index) => (
-              <span key={index + letter} id="hero_title_letters">
-                {letter}
-              </span>
-            ))}
-          </h2>
-          <motion.p variants={opacity} animate="enter" initial="initial">
-            I’m currently working as a <b>Frontend Developer</b>, sculpting
-            immersive digital experiences that seamlessly blend functionality
-            and user appeal.
-          </motion.p>
+        <div className={classes.warrper}>
+          <div className={classes.textWrp}>
+            <AnimatedText
+              id="#title1"
+              gsapProps={{
+                y: 0,
+                stagger: 0.03,
+                delay: 2.9,
+                duration: 0.1,
+              }}
+            >
+              <h2 className="league-gothic" id="title1">
+                HI! I&apos;M ABINASH
+              </h2>
+            </AnimatedText>
+            <motion.p variants={opacity} animate="enter" initial="initial">
+              I have been working in the industry since 2021, creating digital
+              products that are both functional and enjoyable for end users.
+            </motion.p>
+          </div>
+          <div className={classes.textWrp}>
+            <AnimatedText
+              id="#title2"
+              gsapProps={{
+                y: 0,
+                stagger: 0.03,
+                delay: 2.9,
+                duration: 0.1,
+              }}
+            >
+              <h2 className="league-gothic" id="title2">
+                WEB DEVELOPER
+              </h2>
+            </AnimatedText>
+            <motion.p variants={opacity} animate="enter" initial="initial">
+              I’m currently working as a Frontend Developer, sculpting immersive
+              digital experiences that seamlessly blend functionality and user
+              appeal.
+            </motion.p>
+          </div>
+          <div className={classes.arrowIconSection} id="hero_arrow_icn">
+            <Magnetic>
+              <div className={classes.arrowIconContainer}>
+                <Image
+                  src={ArrowIcon}
+                  alt="Arrow icon"
+                  width={80}
+                  height={20}
+                  id="hero_arrow_img"
+                />
+              </div>
+            </Magnetic>
+            <p>Scroll Down</p>
+          </div>
         </div>
       </motion.section>
       <div className={classes.heroCircleImage}>
-        <Image
-          src={HeroSVG}
-          alt="Hero circle image"
-          width={100}
-          height={100}
-          id="hero_circle"
-        />
+        <Image src={HeroSVG} alt="Hero circle image" width={100} height={100} />
       </div>
     </>
   );

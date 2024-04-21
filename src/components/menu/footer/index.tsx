@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import Magnetic from '@/commons/magnetic';
-import styles from './style.module.scss';
+import classes from './style.module.scss';
 
 export default function Footer() {
   return (
-    <div className={styles.footer}>
+    <div className={classes.footer}>
       <Magnetic>
         <Link href="https://www.linkedin.com/in/abinash-shasini/">
           LinkedIn

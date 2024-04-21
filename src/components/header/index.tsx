@@ -2,11 +2,12 @@ import React, { FC, useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import { LogoIcn } from '@/utils';
+import { LogoIcn, navItems } from '@/utils';
 import { AnimatePresence } from 'framer-motion';
 import SideMenu from '../menu';
 import Magnetic from '@/commons/magnetic';
 import classes from './style.module.scss';
+import { TNavData } from '@/types';
 
 const Header: FC = () => {
   /** Required states and refs */
@@ -30,6 +31,20 @@ const Header: FC = () => {
       setShowMenuButton(false);
     }
   };
+  /** Effect to fix the body to prevent scroling when sidebar is present */
+  useEffect(() => {
+    (async () => {
+      const Lenis = (await import('@studio-freight/lenis')).default;
+      const lenis = new Lenis();
+      if (showSideMenu) {
+        document.body.style.overflow = 'hidden';
+        lenis.stop();
+      } else {
+        document.body.style.overflow = 'auto';
+        lenis.start();
+      }
+    })();
+  }, [showSideMenu]);
 
   /** Effect to add scroll event listener */
   useEffect(() => {
@@ -48,31 +63,13 @@ const Header: FC = () => {
             </Magnetic>
           </a>
           <ul className={classes.menuContainer}>
-            <a href="/#services">
-              <Magnetic>
-                <li id="hero_list-item">Services</li>
-              </Magnetic>
-            </a>
-            <a href="#work">
-              <Magnetic>
-                <li id="hero_list-item">Works</li>
-              </Magnetic>
-            </a>
-            <a href="/#about">
-              <Magnetic>
-                <li id="hero_list-item">About</li>
-              </Magnetic>
-            </a>
-            <a href="/#roles">
-              <Magnetic>
-                <li id="hero_list-item">Roles</li>
-              </Magnetic>
-            </a>
-            <a href="/#contact">
-              <Magnetic>
-                <li id="hero_list-item">Contact</li>
-              </Magnetic>
-            </a>
+            {navItems.map((element: TNavData) => (
+              <a href={element.href} key={element.id}>
+                <Magnetic>
+                  <li id="hero_list-item">{element.title}</li>
+                </Magnetic>
+              </a>
+            ))}
           </ul>
         </>
       )}
@@ -89,9 +86,7 @@ const Header: FC = () => {
         <span data-open={showSideMenu}></span>
       </button>
 
-      <AnimatePresence mode="wait">
-        {showSideMenu && <SideMenu />}
-      </AnimatePresence>
+      <AnimatePresence>{showSideMenu && <SideMenu />}</AnimatePresence>
     </header>
   );
 };

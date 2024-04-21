@@ -9,11 +9,13 @@ import project4 from '/public/assets/images/project4.webp';
 import logo from '/public/assets/images/logo.svg';
 import skills from '/public/assets/images/skills.svg';
 import sideMenuSvg from '/public/assets/images/sidemenu.svg';
+import ArrowSvg from '/public/assets/images/arrow.svg';
 
 export const HeroSVG = hero;
 export const LogoIcn = logo;
 export const skillsIn = skills;
 export const sideMenuImage = sideMenuSvg;
+export const ArrowIcon = ArrowSvg;
 
 export const skillsData = [
   {

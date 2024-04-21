@@ -4,7 +4,6 @@ import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { menuSlide } from './animation';
 import Link from './link';
-import Curve from './curve';
 import Footer from './footer';
 import { navItems, sideMenuImage } from '@/utils';
 import { TNavData } from '@/types';
@@ -61,7 +60,6 @@ const SideMenu = () => {
               height={327}
             />
           </div>
-          {/* <Curve /> */}
         </motion.div>
       </div>
     </>

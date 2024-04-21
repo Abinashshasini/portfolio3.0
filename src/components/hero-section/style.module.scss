@@ -1,44 +1,85 @@
 .container {
-  padding: 0 30px;
   height: 100vh;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   flex-direction: column;
   position: sticky;
   top: -10%;
 
-  .textWrp {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    margin-bottom: 5vw;
+  .warrper {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
+    padding: 0 30px;
 
-    & > h2 {
-      font-size: clamp(3.5rem, 2.3571rem + 4.5143vi, 10.5rem);
-      flex: 1;
-      font-weight: bold;
-      letter-spacing: 0.5px;
-      color: var(--text-primary);
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    .textWrp {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      margin-bottom: 5vw;
+      width: 100%;
 
-      & > span {
-        transform: translateY(240px);
-        transition: transform 0.5s;
-        display: inline-block;
+      & > h2 {
+        font-size: clamp(3.8rem, -0.057rem + 12.0714vw, 14.25rem);
+        flex: 1;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        color: var(--text-primary);
+
+        & > span {
+          transform: translateY(240px);
+          transition: transform 0.5s;
+          display: inline-block;
+        }
+
+        &:last-child {
+          text-align: right;
+        }
       }
 
-      &:last-child {
-        text-align: right;
+      & > p {
+        font-size: 0.85rem;
+        font-weight: 400;
+        line-height: 1.5;
+        margin-top: 3vw;
+        color: var(--text-secondary);
+        padding-left: 3rem;
+        font-style: italic;
+        letter-spacing: 0.5px;
       }
     }
 
-    & > p {
-      font-size: 0.7rem;
-      font-weight: 400;
-      line-height: 1.5;
-      margin-top: 3vw;
-      color: var(--text-secondary);
-      padding-left: 3rem;
+    .arrowIconSection {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 10vw;
+      flex-direction: column;
+
+      .arrowIconContainer {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 3px solid var(--black-primary);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & > img {
+          height: 13px;
+          transform: rotate(-90deg);
+        }
+      }
+
+      & > p {
+        font-size: 0.9rem;
+        font-style: italic;
+        font-weight: 500;
+        margin-top: 1rem;
+        color: var(--text-primary);
+      }
     }
   }
 }
@@ -60,32 +101,55 @@
 
 @media screen and (min-width: 1200px) {
   .container {
-    padding: 0 140px;
     height: 100vh;
 
-    .textWrp {
-      flex-direction: row;
-      & > h2 {
-        font-size: clamp(3.5rem, 12vw, 15vw);
+    .warrper {
+      top: 25%;
+      padding: 0 140px;
+
+      .textWrp {
+        flex-direction: row;
+
+        & > p {
+          width: 25%;
+          font-size: 1.2rem;
+          line-height: 1.5;
+          margin-top: 1.5vw;
+        }
       }
 
-      & > p {
-        width: 25%;
-        font-size: 1.2rem;
-        line-height: 1.5;
-        margin-top: 1.5vw;
-      }
-    }
+      .textWrp:nth-child(2) {
+        flex-direction: row-reverse;
 
-    .textWrp:nth-child(2) {
-      flex-direction: row-reverse;
+        & > h2 {
+          text-align: right;
+        }
 
-      & > h2 {
-        text-align: right;
+        & > p {
+          padding-left: 0;
+        }
       }
 
-      & > p {
-        padding-left: 0;
+      .arrowIconSection {
+        padding-top: 0px;
+        margin-top: -1rem;
+
+        .arrowIconContainer {
+          width: 90px;
+          height: 90px;
+
+          & > img {
+            height: 20px;
+          }
+        }
+
+        & > p {
+          font-size: 0.9rem;
+          font-style: italic;
+          font-weight: 500;
+          margin-top: 1rem;
+          color: var(--text-primary);
+        }
       }
     }
   }

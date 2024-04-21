@@ -4,13 +4,13 @@
   left: 0;
   height: 100%;
   width: 100%;
-  opacity: 0.35;
+  opacity: 0.25;
   background: linear-gradient(
     to left,
     hsla(220, 13%, 0%, 0.3) 40%,
     hsla(220, 13%, 0%, 1) 80%
   );
-  transition: opacity 0.8s cubic-bezier(0.7, 0, 0.2, 1);
+  transition: opacity 0.5s cubic-bezier(0.7, 0, 0.2, 1);
   z-index: 100;
   pointer-events: none;
   will-change: opacity;
@@ -31,6 +31,7 @@
     border-radius: 10px;
     background-color: var(--text-primary);
     position: relative;
+    width: 30vw;
 
     .bgImage {
       position: absolute;
@@ -45,12 +46,13 @@
     }
 
     .footercontainer {
-      margin-top: auto;
+      position: absolute;
+      bottom: 1.5rem;
     }
 
     .wraper {
       height: 100%;
-      padding: 15vh 7.5vw 10vh 7.5vw;
+      padding: 10vh 3vw 10vh 6vw;
       display: flex;
       flex-direction: column;
 
@@ -93,6 +95,8 @@
     right: 0;
 
     .container {
+      width: 100%;
+
       .bgImage {
         & > img {
           height: 327px;

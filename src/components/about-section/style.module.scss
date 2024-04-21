@@ -16,6 +16,11 @@
       text-transform: uppercase;
       transition-property: all;
       transition-duration: 0.5s;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+
+      .line .word .char {
+        transform: translateY(100px);
+      }
     }
 
     & > p {
