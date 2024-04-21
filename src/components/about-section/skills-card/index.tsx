@@ -22,8 +22,8 @@ const SkillCard: FC<IProps> = ({ index, data }) => {
             <p key={element + index}>{element}</p>
           ))}
         </div>
+        <span className={classes.indexElement}>0{index + 1}.</span>
       </div>
-      <span className={classes.indexElement}>0{index + 1}.</span>
     </div>
   );
 };
