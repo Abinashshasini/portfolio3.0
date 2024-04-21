@@ -6,22 +6,22 @@ const targetPath = `M100 0 L100 ${window.innerHeight} Q100 ${
 } 100 0`;
 
 export const menuSlide = {
-  initial: { x: 'calc(100% + 100px)' },
+  initial: { x: '-100%' },
   enter: { x: '0', transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } },
   exit: {
-    x: 'calc(100% + 100px)',
+    x: '-100%',
     transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
   },
 };
 
 export const slide = {
-  initial: { x: 80 },
+  initial: { x: -80 },
   enter: (i: any) => ({
     x: 0,
     transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.05 * i },
   }),
   exit: (i: any) => ({
-    x: 80,
+    x: -80,
     transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.05 * i },
   }),
 };

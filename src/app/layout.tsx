@@ -5,22 +5,22 @@ import './globals.css';
 const roboto = localFont({
   src: [
     {
-      path: '../../public/fonts/OverusedGrotesk-Light.woff2',
+      path: '../../public/assets/fonts/OverusedGrotesk-Light.woff2',
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../../public/fonts/OverusedGrotesk-Medium.woff2',
+      path: '../../public/assets/fonts/OverusedGrotesk-Medium.woff2',
       weight: '500',
       style: 'normal',
     },
     {
-      path: '../../public/fonts/OverusedGrotesk-Bold.woff2',
+      path: '../../public/assets/fonts/OverusedGrotesk-Bold.woff2',
       weight: '600',
       style: 'normal',
     },
     {
-      path: '../../public/fonts/OverusedGrotesk-ExtraBold.woff2',
+      path: '../../public/assets/fonts/OverusedGrotesk-ExtraBold.woff2',
       weight: '700',
       style: 'normal',
     },

@@ -72,7 +72,7 @@ const SideMenu = () => {
             <Footer />
           </div>
         </div>
-        <Curve />
+        {/* <Curve /> */}
       </motion.div>
     </>
   );
