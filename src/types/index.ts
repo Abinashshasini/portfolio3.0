@@ -21,3 +21,10 @@ export type TExperienceData = {
   position: string;
   description: string[];
 };
+
+export type TNavData = {
+  id: string;
+  title: string;
+  href: string;
+  index?: number;
+};

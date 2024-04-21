@@ -1,34 +1,14 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 import { menuSlide } from './animation';
 import Link from './link';
 import Curve from './curve';
 import Footer from './footer';
-import styles from './style.module.scss';
-
-const navItems = [
-  {
-    title: 'Home',
-    href: '/',
-  },
-  {
-    title: 'Work',
-    href: '/work',
-  },
-  {
-    title: 'Projects',
-    href: '/projects',
-  },
-  {
-    title: 'About',
-    href: '/about',
-  },
-  {
-    title: 'Contact',
-    href: '/contact',
-  },
-];
+import { navItems, sideMenuImage } from '@/utils';
+import { TNavData } from '@/types';
+import classes from './style.module.scss';
 
 const SideMenu = () => {
   const pathname = usePathname();
@@ -36,44 +16,54 @@ const SideMenu = () => {
 
   return (
     <>
-      <div className={styles.overlay} />
-      <motion.div
-        variants={menuSlide}
-        initial="initial"
-        animate="enter"
-        exit="exit"
-        className={styles.container}
-      >
-        <div className={styles.wraper}>
-          <div className={styles.header}>
-            <p>Navigation</p>
-          </div>
-          <div
-            onMouseLeave={() => {
-              setSelectedIndicator(pathname);
-            }}
-            className={styles.navItems}
-          >
-            {navItems.map((data, index) => {
-              return (
-                <Link
-                  key={index}
-                  data={{ ...data, index }}
-                  isActive={selectedIndicator == data.href}
-                  setSelectedIndicator={setSelectedIndicator}
-                ></Link>
-              );
-            })}
-          </div>
-          <div className={styles.footercontainer}>
-            <div className={styles.header}>
-              <p>Social Media</p>
+      <div className={classes.overlay} />
+      <div className={classes.sidebarWarper}>
+        <motion.div
+          variants={menuSlide}
+          initial="initial"
+          animate="enter"
+          exit="exit"
+          className={classes.container}
+        >
+          <div className={classes.wraper}>
+            <div className={classes.header}>
+              <p>Navigation</p>
             </div>
-            <Footer />
+            <div
+              onMouseLeave={() => {
+                setSelectedIndicator(pathname);
+              }}
+              className={classes.navItems}
+            >
+              {navItems.map((data: TNavData, index) => {
+                return (
+                  <Link
+                    key={data.id}
+                    data={{ ...data, index }}
+                    isActive={selectedIndicator == data.href}
+                    setSelectedIndicator={setSelectedIndicator}
+                  ></Link>
+                );
+              })}
+            </div>
+            <div className={classes.footercontainer}>
+              <div className={classes.header}>
+                <p>Social Media</p>
+              </div>
+              <Footer />
+            </div>
           </div>
-        </div>
-        {/* <Curve /> */}
-      </motion.div>
+          <div className={classes.bgImage}>
+            <Image
+              src={sideMenuImage}
+              alt="sideMenu image"
+              width={245}
+              height={327}
+            />
+          </div>
+          {/* <Curve /> */}
+        </motion.div>
+      </div>
     </>
   );
 };

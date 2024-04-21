@@ -2,8 +2,9 @@ import { Dispatch, FC, SetStateAction } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { slide, scale } from '../animation';
-import styles from './style.module.scss';
 import Magnetic from '@/commons/magnetic';
+import { TNavData } from '@/types';
+import styles from './style.module.scss';
 
 type data = {
   title: string;
@@ -11,7 +12,7 @@ type data = {
   index: number;
 };
 interface IProps {
-  data: data;
+  data: TNavData;
   isActive: boolean;
   setSelectedIndicator: Dispatch<SetStateAction<string>>;
 }

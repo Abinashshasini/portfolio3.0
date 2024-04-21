@@ -8,10 +8,12 @@ import project3 from '/public/assets/images/project3.webp';
 import project4 from '/public/assets/images/project4.webp';
 import logo from '/public/assets/images/logo.svg';
 import skills from '/public/assets/images/skills.svg';
+import sideMenuSvg from '/public/assets/images/sidemenu.svg';
 
 export const HeroSVG = hero;
 export const LogoIcn = logo;
 export const skillsIn = skills;
+export const sideMenuImage = sideMenuSvg;
 
 export const skillsData = [
   {
@@ -97,5 +99,33 @@ export const experienceData = [
       'Led the development of a React-based report website, offering users insightful data visualizations and interactive reports.',
       // 'Successfully migrated a comprehensive Ionic Angular application to React Native, prioritizing superior-quality, high-performance user interfaces.',
     ],
+  },
+];
+
+export const navItems = [
+  {
+    id: '#01@',
+    title: 'Home',
+    href: '/',
+  },
+  {
+    id: '#02@',
+    title: 'Services',
+    href: '/#services',
+  },
+  {
+    id: '#03@',
+    title: 'Works',
+    href: '/#work',
+  },
+  {
+    id: '#04@',
+    title: 'About',
+    href: '/#about',
+  },
+  {
+    id: '#05@',
+    title: 'Contact',
+    href: '/#contact',
   },
 ];
