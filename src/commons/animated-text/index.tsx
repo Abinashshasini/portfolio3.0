@@ -9,11 +9,17 @@ type Tprops = {
   children: any;
   id: string;
   gsapProps: any;
+  scrollTriggerProps?: any;
 };
 
 gsap.registerPlugin(ScrollTrigger);
 
-const AnimatedText: FC<Tprops> = ({ children, id = '', gsapProps }) => {
+const AnimatedText: FC<Tprops> = ({
+  children,
+  id = '',
+  gsapProps,
+  scrollTriggerProps,
+}) => {
   /** GSAP hook for trigering animation */
   useGSAP(() => {
     SplitType.create(id);

@@ -14,8 +14,13 @@ const AboutSection = () => {
           gsapProps={{
             y: 0,
             stagger: 0.03,
-            delay: 2.9,
             duration: 0.1,
+          }}
+          scrollTriggerProps={{
+            trigger: '#heading',
+            start: 'top 100%',
+            end: 'bottom 95%',
+            scrub: true,
           }}
         >
           <h2 id="heading">What i Do.</h2>
