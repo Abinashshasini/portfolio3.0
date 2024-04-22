@@ -12,6 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 const AboutSection = () => {
   const paragraph =
     'A skilled frontend web developer adept creating elegant modern designs. seamlessly integrating creativity with tech to deliver captivating user experience.';
+
   /** useGSAP hook to animate the heading */
   useGSAP(() => {
     gsap.to('#about_heading-title', {
@@ -33,9 +34,10 @@ const AboutSection = () => {
         end: 'bottom 85%',
       },
       y: 0,
-      stagger: 0.02,
-      duration: 0.1,
+      stagger: 0.01,
+      duration: 0.5,
       opacity: 1,
+      ease: 'power1.inOut',
     });
   }, []);
   return (
