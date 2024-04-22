@@ -28,10 +28,18 @@
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
         color: var(--text-primary);
 
-        & > span {
-          transform: translateY(240px);
-          transition: transform 0.5s;
+        & > p {
           display: inline-block;
+          margin-right: 10px;
+
+          & > span {
+            display: inline-block;
+            translate: none;
+            rotate: none;
+            scale: none;
+            transform: translateY(60px);
+            transition: transform 0.5s;
+          }
         }
 
         &:last-child {
@@ -55,7 +63,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding-top: 10vw;
+      padding-top: 15vw;
       flex-direction: column;
 
       .arrowIconContainer {

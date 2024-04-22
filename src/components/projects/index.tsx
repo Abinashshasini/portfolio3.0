@@ -2,12 +2,13 @@
 import React from 'react';
 import { projectData } from '@/utils';
 import classes from './style.module.scss';
+import AnimatedText from '@/commons/animated-text';
 
 const Projects = () => {
   return (
     <div className={`section-padding ${classes.container}`}>
       <div className={classes.headingCnt}>
-        <h2 aria-hidden="true">
+        <h2 aria-hidden="true" id="project_heading">
           <span>Personal</span>
           <span>Projects</span>
           <sup>

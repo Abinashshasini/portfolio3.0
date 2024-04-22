@@ -22,7 +22,7 @@ export const skillsData = [
     id: '#01',
     title: 'Frontend Development',
     description:
-      'I strive for seamless cross-device experiences, empowering effortless user engagement. From concept to execution, I push web development boundaries to create immersive solutions.',
+      'I strive for seamless experiences, empowering effortless user engagement. From concept to execution, I push web development boundaries to create immersive solutions.',
     technology: ['React JS', 'JavaScript', 'Next JS'],
     icon: shape1,
   },
@@ -36,7 +36,7 @@ export const skillsData = [
   },
   {
     id: '#03',
-    title: 'Mobile Apps Development',
+    title: 'Apps Development',
     description:
       'As a React Native developer, I craft cross-platform apps for seamless user experiences. Passionate about mobile tech, I thrive on bringing ideas to life in app development.',
     technology: ['React Native', 'Expo', 'Android/IOS Development'],

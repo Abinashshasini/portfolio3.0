@@ -7,6 +7,7 @@ import HeroSection from '@/components/hero-section';
 import AboutSection from '@/components/about-section';
 import Projects from '@/components/projects';
 import Experience from '@/components/experience';
+import SmoothScroll from '@/components/smooth-scroll';
 
 export default function Home() {
   /** State to show loading state when user comes to the page or refreshes */
@@ -15,15 +16,15 @@ export default function Home() {
   /** Effect to initialise the locomotive scroll and remove the preloader after 3s */
   useEffect(() => {
     (async () => {
-      const Lenis = (await import('@studio-freight/lenis')).default;
-      const lenis = new Lenis();
+      // const Lenis = (await import('@studio-freight/lenis')).default;
+      // const lenis = new Lenis();
 
-      /** Functiont to initiate smooth scroll */
-      function raf(time: any) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-      }
-      requestAnimationFrame(raf);
+      // /** Functiont to initiate smooth scroll */
+      // function raf(time: any) {
+      //   lenis.raf(time);
+      //   requestAnimationFrame(raf);
+      // }
+      // requestAnimationFrame(raf);
 
       setTimeout(() => {
         setIsLoading(false);
@@ -34,16 +35,18 @@ export default function Home() {
   }, []);
 
   return (
-    <main>
-      <AnimatePresence mode="wait">
-        {isLoading && <Preloader />}
-      </AnimatePresence>
-      <Header />
-      <HeroSection />
-      <AboutSection />
-      <Projects />
-      <Experience />
-      <div style={{ height: '100vh', background: 'yellow' }}></div>
-    </main>
+    <SmoothScroll>
+      <main>
+        <AnimatePresence mode="wait">
+          {isLoading && <Preloader />}
+        </AnimatePresence>
+        <Header />
+        <HeroSection />
+        <AboutSection />
+        <Projects />
+        <Experience />
+        <div style={{ height: '100vh', background: 'yellow' }}></div>
+      </main>
+    </SmoothScroll>
   );
 }

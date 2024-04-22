@@ -24,6 +24,7 @@ const AnimatedText: FC<Tprops> = ({
   useGSAP(() => {
     SplitType.create(id);
     gsap.to('.char', {
+      scrollTrigger: scrollTriggerProps ? scrollTriggerProps : undefined,
       ...gsapProps,
     });
   }, []);

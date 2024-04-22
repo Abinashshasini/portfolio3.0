@@ -6,10 +6,10 @@ import gsap from 'gsap';
 import { motion } from 'framer-motion';
 import { ScrollTrigger } from 'gsap/all';
 import { slideUpContainer, opacity } from './animation';
-import AnimatedText from '@/commons/animated-text';
 import { ArrowIcon, HeroSVG } from '@/utils';
-import classes from './style.module.scss';
 import Magnetic from '@/commons/magnetic';
+import { handleSplitPhrase } from '@/utils/split';
+import classes from './style.module.scss';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -49,6 +49,13 @@ const HeroSection = () => {
         ease: 'power1.inOut',
       }
     );
+
+    gsap.to('#hero_heading-text', {
+      y: 0,
+      stagger: 0.03,
+      delay: 2.9,
+      duration: 0.1,
+    });
   }, []);
 
   return (
@@ -62,38 +69,18 @@ const HeroSection = () => {
       >
         <div className={classes.warrper}>
           <div className={classes.textWrp}>
-            <AnimatedText
-              id="#title1"
-              gsapProps={{
-                y: 0,
-                stagger: 0.03,
-                delay: 2.9,
-                duration: 0.1,
-              }}
-            >
-              <h2 className="league-gothic" id="title1">
-                HI! I&apos;M ABINASH
-              </h2>
-            </AnimatedText>
+            <h2 className="league-gothic">
+              {handleSplitPhrase("HI! I'M ABINASH", 'hero_heading-text')}
+            </h2>
             <motion.p variants={opacity} animate="enter" initial="initial">
               I have been working in the industry since 2021, creating digital
               products that are both functional and enjoyable for end users.
             </motion.p>
           </div>
           <div className={classes.textWrp}>
-            <AnimatedText
-              id="#title2"
-              gsapProps={{
-                y: 0,
-                stagger: 0.03,
-                delay: 2.9,
-                duration: 0.1,
-              }}
-            >
-              <h2 className="league-gothic" id="title2">
-                WEB DEVELOPER
-              </h2>
-            </AnimatedText>
+            <h2 className="league-gothic">
+              {handleSplitPhrase('WEB DEVELOPER', 'hero_heading-text')}
+            </h2>
             <motion.p variants={opacity} animate="enter" initial="initial">
               I’m currently working as a Frontend Developer, sculpting immersive
               digital experiences that seamlessly blend functionality and user
