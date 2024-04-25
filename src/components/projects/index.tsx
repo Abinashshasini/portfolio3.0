@@ -2,7 +2,6 @@
 import React from 'react';
 import { projectData } from '@/utils';
 import classes from './style.module.scss';
-import AnimatedText from '@/commons/animated-text';
 
 const Projects = () => {
   return (
