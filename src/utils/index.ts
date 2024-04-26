@@ -137,7 +137,7 @@ export const reviewsData = [
   {
     id: '#01',
     review:
-      "Abinash is a fantastic addition to any team. We've worked together at Justdial on multiple projects, and I can vouch for his dedication and willingness to go the extra mile whenever needed. His contributions are consistently valuable, and I highly recommend collaborating with someone as reliable and hardworking as Abinash. He's a great colleague and developer, and I'm confident he'll bring a lot of value to any project or team he joins.",
+      "Abinash is a fantastic addition to any team. We've worked together at Justdial on multiple projects, and I can vouch for his dedication and willingness to go the extra mile whenever needed. His contributions are consistently valuable, and I highly recommend collaborating with someone as reliable and hardworking as Abinash.",
     name: 'Shubham Singla',
     designation: 'Product Manager @justdial.com',
     photo: ShubhamPhoto,
