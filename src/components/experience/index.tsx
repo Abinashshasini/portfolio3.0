@@ -1,9 +1,10 @@
 import React from 'react';
 import ExperienceCard from './experience-card';
 import Image from 'next/image';
-import { experienceData, skillsIn } from '@/utils';
-import { TExperienceData } from '@/types';
+import { experienceData, reviewsData, skillsIn } from '@/utils';
+import { TExperienceData, TReviewsData } from '@/types';
 import classes from './style.module.scss';
+import ReviewsCard from './reviews-card';
 
 const Experience = () => {
   return (
@@ -22,7 +23,7 @@ const Experience = () => {
 
         <div className={classes.experienceCnt}>
           {experienceData.map((element: TExperienceData, index: number) => (
-            <ExperienceCard data={element} key={element.id} index={index} />
+            <ExperienceCard data={element} key={element.id} />
           ))}
         </div>
         <div className={classes.separator}>
@@ -36,6 +37,10 @@ const Experience = () => {
             experience together /
           </p>
         </div>
+
+        {reviewsData.map((element) => (
+          <ReviewsCard data={element} key={element.id} />
+        ))}
       </div>
     </div>
   );

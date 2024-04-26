@@ -10,6 +10,7 @@ import logo from '/public/assets/images/logo.svg';
 import skills from '/public/assets/images/skills.svg';
 import sideMenuSvg from '/public/assets/images/sidemenu.svg';
 import ArrowSvg from '/public/assets/images/arrow.svg';
+import ShubhamPhoto from '/public/assets/images/shubham.png';
 
 export const HeroSVG = hero;
 export const LogoIcn = logo;
@@ -100,7 +101,7 @@ export const experienceData = [
     position: 'Software Developer',
     href: 'https://thinkzone.in',
     description:
-      'Collaborated with designers and backend developers to build responsive UIs using React and JavaScript.',
+      'Successfully migrated a full ionic angular mobile app to React native and maintianed core business requirements.',
   },
 ];
 
@@ -129,5 +130,17 @@ export const navItems = [
     id: '#05@',
     title: 'Contact',
     href: '/#contact',
+  },
+];
+
+export const reviewsData = [
+  {
+    id: '#01',
+    review:
+      "Abinash is a fantastic addition to any team. We've worked together at Justdial on multiple projects, and I can vouch for his dedication and willingness to go the extra mile whenever needed. His contributions are consistently valuable, and I highly recommend collaborating with someone as reliable and hardworking as Abinash. He's a great colleague and developer, and I'm confident he'll bring a lot of value to any project or team he joins.",
+    name: 'Shubham Singla',
+    designation: 'Product Manager @justdial.com',
+    photo: ShubhamPhoto,
+    href: 'https://shubhamsingla807.github.io',
   },
 ];

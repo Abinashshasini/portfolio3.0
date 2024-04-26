@@ -1,3 +1,5 @@
+import { StaticImageData } from 'next/image';
+
 export type TAboutData = {
   id: string;
   title: string;
@@ -29,4 +31,13 @@ export type TNavData = {
   title: string;
   href: string;
   index?: number;
+};
+
+export type TReviewsData = {
+  id: string;
+  review: string;
+  name: string;
+  designation: string;
+  photo: StaticImageData;
+  href: string;
 };

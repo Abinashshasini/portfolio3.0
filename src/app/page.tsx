@@ -25,13 +25,13 @@ export default function Home() {
   return (
     <SmoothScroll>
       <main>
-        {/* <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait">
           {isLoading && <Preloader />}
         </AnimatePresence>
         <Header />
         <HeroSection />
         <AboutSection />
-        <Projects /> */}
+        <Projects />
         <Experience />
         <div style={{ height: '100vh', background: 'yellow' }}></div>
       </main>

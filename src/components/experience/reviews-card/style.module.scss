@@ -1,0 +1,57 @@
+.container {
+  padding: 1.5rem;
+  background-color: var(--bg-tertiary);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+  min-width: 70%;
+
+  & > blockquote {
+    line-height: 1.3;
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 1.25rem;
+    text-wrap: pretty;
+    max-height: 40ch;
+    letter-spacing: 0.2px;
+  }
+
+  & > .reviewerDetailsCnt {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 1rem;
+
+    .imageCnt {
+      width: 3rem;
+      height: 3rem;
+      flex-shrink: 0;
+      margin-right: 0.8rem;
+
+      & > img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .reviewerDtls {
+    font-size: 1rem;
+
+    & > h4 {
+      color: var(--text-secondary);
+      font-weight: 600;
+      margin-bottom: 5px;
+      letter-spacing: 0.5px;
+    }
+
+    & > p {
+      color: var(--text-base-deep);
+      font-weight: 400;
+      margin-bottom: 5px;
+      letter-spacing: 0.5px;
+    }
+  }
+}
