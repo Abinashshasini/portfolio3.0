@@ -19,7 +19,9 @@ export type TExperienceData = {
   id: string;
   company: string;
   position: string;
-  description: string[];
+  location: string;
+  href: string;
+  description: string;
 };
 
 export type TNavData = {

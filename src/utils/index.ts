@@ -86,21 +86,21 @@ export const projectData = [
 export const experienceData = [
   {
     id: '#01',
-    company: 'Justdial | Feb 2022 - Present',
+    company: 'justdial.com',
     position: 'Software Engineer',
-    description: [
-      'Collaborated with designers and backend developers to build responsive UIs using React and JavaScript.',
-      // 'Ensured seamless cross-browser compatibility and implemented performance optimizations, boosting application speed by 30%.',
-    ],
+    location: 'Bangalore, India',
+    href: 'https://www.justdial.com',
+    description:
+      'Developing front-end mobile solutions (B2C, B2B) in Ecommerse Tech on React/Next.js framework and Javascript.',
   },
   {
     id: '#02',
-    company: 'ThinkZone | Feb 2021 - Jan 2022',
+    company: 'thinkzone.in',
+    location: 'Cuttack, India',
     position: 'Software Developer',
-    description: [
-      'Led the development of a React-based report website, offering users insightful data visualizations and interactive reports.',
-      // 'Successfully migrated a comprehensive Ionic Angular application to React Native, prioritizing superior-quality, high-performance user interfaces.',
-    ],
+    href: 'https://thinkzone.in',
+    description:
+      'Collaborated with designers and backend developers to build responsive UIs using React and JavaScript.',
   },
 ];
 
