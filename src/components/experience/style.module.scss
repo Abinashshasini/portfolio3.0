@@ -34,7 +34,7 @@
   .skillsCnt {
     width: 100%;
     height: 40vh;
-    padding: 1.5rem 0;
+    padding: 2.5rem 0;
 
     & > img {
       width: 100%;
@@ -56,7 +56,7 @@
   .separator {
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
+    margin-top: 2rem;
 
     & > span {
       height: 3px;
@@ -64,6 +64,41 @@
       border-radius: 2px;
       background-color: var(--text-primary);
       display: block;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    padding: 2% 6% 5%;
+
+    .skillsWrp {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+
+      .skillsCnt {
+        padding: 0 0;
+        width: 50%;
+        height: 50vh;
+      }
+
+      .experienceCnt {
+        display: flex;
+        flex-direction: column;
+        height: 40vh;
+        justify-content: space-evenly;
+        width: 50%;
+      }
+    }
+
+    .separator {
+      margin-top: 3rem;
+
+      & > span {
+        height: 4px;
+        width: 5rem;
+      }
     }
   }
 }

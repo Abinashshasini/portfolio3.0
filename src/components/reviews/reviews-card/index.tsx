@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-import { TReviewsData } from '@/types/index';
-import classes from './style.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
+import { TReviewsData } from '@/types/index';
+import classes from './style.module.scss';
 
 type Tprops = {
   data: TReviewsData;

@@ -11,6 +11,7 @@ import skills from '/public/assets/images/skills.svg';
 import sideMenuSvg from '/public/assets/images/sidemenu.svg';
 import ArrowSvg from '/public/assets/images/arrow.svg';
 import ShubhamPhoto from '/public/assets/images/shubham.png';
+import AsutoshPhoto from '/public/assets/images/ashutosh.jpeg';
 
 export const HeroSVG = hero;
 export const LogoIcn = logo;
@@ -142,5 +143,14 @@ export const reviewsData = [
     designation: 'Product Manager @justdial.com',
     photo: ShubhamPhoto,
     href: 'https://shubhamsingla807.github.io',
+  },
+  {
+    id: '#02',
+    review:
+      "Collaborating with — Abinash at Justdial was seamless. His knack for bug-solving and time management made our projects run like clockwork. I highly recommend Abinash as a reliable and diligent developer who elevates any team he's a part of.",
+    name: 'Ashutosh Verma',
+    designation: 'Solution Architect @justdial.com',
+    photo: AsutoshPhoto,
+    href: 'https://www.linkedin.com/in/ashutosh-is-here/',
   },
 ];

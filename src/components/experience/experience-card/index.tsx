@@ -6,11 +6,12 @@ import classes from './stlye.module.scss';
 
 type Tprops = {
   data: TExperienceData;
+  index: number;
 };
 
-const ExperienceCard: FC<Tprops> = ({ data }) => {
+const ExperienceCard: FC<Tprops> = ({ data, index }) => {
   return (
-    <div className={classes.container}>
+    <div className={classes.container} data-index={index + 1}>
       <div className={classes.detailsWrp}>
         <div className={classes.detailsCnt}>
           <FaLocationDot />
