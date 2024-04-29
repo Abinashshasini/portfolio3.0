@@ -8,6 +8,7 @@ import AboutSection from '@/components/about-section';
 import Projects from '@/components/projects';
 import Experience from '@/components/experience';
 import Reviews from '@/components/reviews';
+import MoreAboutMe from '@/components/more-about-me';
 
 export default function Home() {
   /** State to show loading state when user comes to the page or refreshes */
@@ -43,6 +44,7 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <Projects />
+      <MoreAboutMe />
       <Experience />
       <Reviews />
       <div style={{ height: '100vh', background: 'yellow' }}></div>

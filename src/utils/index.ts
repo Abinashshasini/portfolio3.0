@@ -12,12 +12,14 @@ import sideMenuSvg from '/public/assets/images/sidemenu.svg';
 import ArrowSvg from '/public/assets/images/arrow.svg';
 import ShubhamPhoto from '/public/assets/images/shubham.png';
 import AsutoshPhoto from '/public/assets/images/ashutosh.jpeg';
+import AbinashPhoto from '/public/assets/images/abinash.jpg';
 
 export const HeroSVG = hero;
 export const LogoIcn = logo;
 export const skillsIn = skills;
 export const sideMenuImage = sideMenuSvg;
 export const ArrowIcon = ArrowSvg;
+export const AbinashImage = AbinashPhoto;
 
 export const skillsData = [
   {
