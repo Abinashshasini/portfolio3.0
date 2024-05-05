@@ -47,7 +47,6 @@ export default function Home() {
       <MoreAboutMe />
       <Experience />
       <Reviews />
-      <div style={{ height: '100vh', background: 'yellow' }}></div>
     </main>
   );
 }
