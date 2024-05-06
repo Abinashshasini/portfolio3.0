@@ -9,6 +9,7 @@ import Projects from '@/components/projects';
 import Experience from '@/components/experience';
 import Reviews from '@/components/reviews';
 import MoreAboutMe from '@/components/more-about-me';
+import FooterSection from '@/components/footer';
 
 export default function Home() {
   /** State to show loading state when user comes to the page or refreshes */
@@ -37,7 +38,7 @@ export default function Home() {
 
   return (
     <main>
-      <AnimatePresence mode="wait">
+      {/* <AnimatePresence mode="wait">
         {isLoading && <Preloader />}
       </AnimatePresence>
       <Header />
@@ -45,8 +46,9 @@ export default function Home() {
       <AboutSection />
       <Projects />
       <MoreAboutMe />
-      <Experience />
+      <Experience /> */}
       <Reviews />
+      <FooterSection />
     </main>
   );
 }
