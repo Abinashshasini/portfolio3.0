@@ -10,8 +10,6 @@ import classes from './style.module.scss';
 
 gsap.registerPlugin(ScrollTrigger);
 const AboutSection = () => {
-  const paragraph =
-    'A skilled frontend web developer adept creating elegant modern designs. seamlessly integrating creativity with tech to deliver captivating user experience.';
 
   /** useGSAP hook to animate the heading */
   useGSAP(() => {
@@ -22,23 +20,12 @@ const AboutSection = () => {
         end: 'bottom 80%',
       },
       y: 0,
-      stagger: 0.02,
-      duration: 0.1,
-      opacity: 1,
-    });
-
-    gsap.to('#about_heading-description', {
-      scrollTrigger: {
-        trigger: '#about_heading-description',
-        start: 'top 95%',
-        end: 'bottom 85%',
-      },
-      y: 0,
       stagger: 0.01,
       duration: 0.5,
       opacity: 1,
-      ease: 'power1.inOut',
     });
+
+   
   }, []);
   return (
     <div className={`section-padding ${classes.container}`}>
@@ -46,13 +33,8 @@ const AboutSection = () => {
         <h2 id="about_heading-title">
           {handleSplitPhrase('What i do.', 'about_heading-title')}
         </h2>
-
         <p>
-          {paragraph.split(' ').map((word: string, index: number) => (
-            <span key={`${word}-${index}`} id="about_heading-description">
-              {word}
-            </span>
-          ))}
+          A skilled frontend web developer adept creating elegant modern designs. seamlessly integrating creativity with tech to deliver captivating user experience.
         </p>
       </div>
       <div className={classes.skillsWrp}>
