@@ -5,7 +5,7 @@ import shape3 from '/public/assets/images/shape3.svg';
 import project1 from '/public/assets/images/project1.webp';
 import project2 from '/public/assets/images/project2.svg';
 import project3 from '/public/assets/images/project3.svg';
-import project4 from '/public/assets/images/project4.webp';
+import project4 from '/public/assets/images/project4.svg';
 import logo from '/public/assets/images/logo.svg';
 import skills from '/public/assets/images/skills.svg';
 import sideMenuSvg from '/public/assets/images/sidemenu.svg';
