@@ -29,14 +29,14 @@ const Projects = () => {
             <div className={classes.projectDetailImg}>
               <img src={element.img.src} alt="project image" />
             </div>
-            <div className={classes.projectDetailTechnology}>
+            {/* <div className={classes.projectDetailTechnology}>
               <div className={classes.yearCnt}>{element.year}</div>
               <div className={classes.techCnt}>
                 {element.technology.map((childElement) => (
                   <span key={index + childElement}>{childElement}</span>
                 ))}
               </div>
-            </div>
+            </div> */}
             <h3>{element.title}</h3>
             <p>{element.description}</p>
           </div>
