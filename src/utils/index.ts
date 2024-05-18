@@ -2,7 +2,7 @@ import hero from '/public/assets/images/hero.svg';
 import shape1 from '/public/assets/images/shape1.svg';
 import shape2 from '/public/assets/images/shape2.svg';
 import shape3 from '/public/assets/images/shape3.svg';
-import project1 from '/public/assets/images/project1.webp';
+import project1 from '/public/assets/images/project1.svg';
 import project2 from '/public/assets/images/project2.svg';
 import project3 from '/public/assets/images/project3.svg';
 import project4 from '/public/assets/images/project4.svg';
