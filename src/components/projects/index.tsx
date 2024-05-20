@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
+import Image from 'next/image'
 import { projectData } from '@/utils';
 import classes from './style.module.scss';
 
@@ -33,7 +34,11 @@ const Projects = () => {
             <h3>{element.title}</h3>
             <p>{element.description}</p>
             <div className={classes.projectDetailTechnology}>
-            
+            {element.technology.map((images, index) => (
+              <div key={index}>
+                <Image src={images} alt="technology" width={50} height={50} />
+              </div>
+            ))}
             </div>
           </div>
         ))}

@@ -21,6 +21,9 @@ import node from '/public/assets/images/node.png'
 import tailwind from '/public/assets/images/tailwind.svg'
 import three from '/public/assets/images/three.svg'
 import typescript from '/public/assets/images/typescript.svg'
+import gsap from '/public/assets/images/gsap.svg'
+import html from '/public/assets/images/html.svg'
+import css from '/public/assets/images/css.svg'
 
 export const HeroSVG = hero;
 export const LogoIcn = logo;
@@ -61,7 +64,7 @@ export const projectData = [
     id: '#01',
     img: project1,
     year: 2024,
-    technology: [next, express, 'MongodB'],
+    technology: [next, node, express, typescript, html, css],
     title: 'Detailed Leetcode Clone.',
     description:
       'Crafted a LeetCode-inspired platform with ReactJS, NodeJS, and MongoDB, delivering a seamless coding experience. Learned full-stack development and database architecture.',
@@ -70,7 +73,7 @@ export const projectData = [
     id: '#02',
     img: project2,
     year: 2023,
-    technology: ['Next JS', 'JavaScript', 'SSR'],
+    technology: [next, typescript, tailwind, react, css],
     title: 'Complete TMDB Clone.',
     description:
       "Built TMDB's official website with Next.js, leveraging SSR for peak performance. Expertly balanced frontend finesse with backend efficiency.",
@@ -79,7 +82,7 @@ export const projectData = [
     id: '#03',
     img: project3,
     year: 2024,
-    technology: ['React JS', 'Three JS', 'GSAP'],
+    technology: [react, three, tailwind, gsap, typescript],
     title: 'Apple iPhone 15 Website.',
     description:
       'Crafted an engaging Apple iPhone 15 website with React.js, Three.js, and GSAP, seamlessly blending stunning visuals with smooth animations for an immersive user experience.',
@@ -88,7 +91,7 @@ export const projectData = [
     id: '#04',
     img: project4,
     year: 2022,
-    technology: ['Next JS', 'Trivia API', 'HTML', 'CSS'],
+    technology: [react, next, tailwind, html, css],
     title: 'Fun Trivia Quiz App.',
     description:
       'Engineered a dynamic trivia quiz app using React.js, JavaScript, and trivia APIs, delivering an engaging and interactive experience for users while honing skills in frontend development and API integration.',
