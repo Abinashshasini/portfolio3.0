@@ -14,16 +14,15 @@ import ShubhamPhoto from '/public/assets/images/shubham.png';
 import AsutoshPhoto from '/public/assets/images/ashutosh.jpeg';
 import AbinashPhoto from '/public/assets/images/abinash.jpg';
 /** Skills images */
-import react from '/public/assets/images/react.svg'
-import express from '/public/assets/images/express.png'
-import next from '/public/assets/images/next.svg'
-import node from '/public/assets/images/node.png'
-import tailwind from '/public/assets/images/tailwind.svg'
-import three from '/public/assets/images/three.svg'
-import typescript from '/public/assets/images/typescript.svg'
-import gsap from '/public/assets/images/gsap.svg'
-import html from '/public/assets/images/html.svg'
-import css from '/public/assets/images/css.svg'
+import react from '/public/assets/images/react.svg';
+import next from '/public/assets/images/next.svg';
+import node from '/public/assets/images/node.png';
+import tailwind from '/public/assets/images/tailwind.svg';
+import three from '/public/assets/images/three.svg';
+import typescript from '/public/assets/images/typescript.svg';
+import gsap from '/public/assets/images/gsap.svg';
+import html from '/public/assets/images/html.svg';
+import css from '/public/assets/images/css.svg';
 
 export const HeroSVG = hero;
 export const LogoIcn = logo;
@@ -64,7 +63,7 @@ export const projectData = [
     id: '#01',
     img: project1,
     year: 2024,
-    technology: [next, node, express, typescript, html, css],
+    technology: [next, node, typescript, html, css],
     title: 'Detailed Leetcode Clone.',
     description:
       'Crafted a LeetCode-inspired platform with ReactJS, NodeJS, and MongoDB, delivering a seamless coding experience. Learned full-stack development and database architecture.',
