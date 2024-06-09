@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import Image from 'next/image';
+import { FaLocationArrow } from 'react-icons/fa';
 import { projectData } from '@/utils';
 import classes from './style.module.scss';
 
@@ -33,12 +34,23 @@ const Projects = () => {
 
             <h3>{element.title}</h3>
             <p>{element.description}</p>
-            <div className={classes.projectDetailTechnology}>
-              {element.technology.map((images, index) => (
-                <div key={index}>
-                  <Image src={images} alt="technology" width={50} height={50} />
-                </div>
-              ))}
+            <div className="flex justify-between px-1">
+              <div className={classes.projectDetailTechnology}>
+                {element.technology.map((images, index) => (
+                  <div key={index} className={classes.technologyCnt}>
+                    <Image
+                      src={images}
+                      alt="technology"
+                      width={50}
+                      height={50}
+                    />
+                  </div>
+                ))}
+              </div>
+              <div className={classes.liveSitelink}>
+                <p>Check on live</p>
+                <FaLocationArrow />
+              </div>
             </div>
           </div>
         ))}

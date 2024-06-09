@@ -71,12 +71,10 @@
         }
       }
 
-
-
       & > h3 {
         color: var(--text-tertiary);
         font-weight: 700;
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         text-transform: uppercase;
         padding-top: 0.75rem;
       }
@@ -87,11 +85,64 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         color: var(--text-base-deep);
-        font-weight: 400;
-        font-size: 1rem;
+        font-weight: 500;
+        font-size: 0.9rem;
         padding-top: 0.25rem;
         text-transform: capitalize;
         line-height: 1.4;
+      }
+
+      .projectDetailTechnology {
+        display: flex;
+        align-items: center;
+
+        .technologyCnt {
+          border-radius: 50%;
+          width: 2.3rem;
+          height: 2.3rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 1px solid var(--text-base-deep);
+          background-color: var(--black-primary);
+
+          & > img {
+            width: 1.5rem;
+            height: 1.5rem;
+          }
+
+          &:nth-child(2) {
+            transform: translateX(-10px);
+          }
+
+          &:nth-child(3) {
+            transform: translateX(-20px);
+          }
+
+          &:nth-child(4) {
+            transform: translateX(-30px);
+          }
+
+          &:nth-child(5) {
+            transform: translateX(-40px);
+          }
+        }
+      }
+
+      .liveSitelink {
+        color: var(--text-tertiary);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+        font-weight: 400;
+
+        & svg {
+          width: 0.7rem;
+          height: 0.7rem;
+          flex-shrink: 0;
+        }
       }
     }
   }
@@ -133,7 +184,6 @@
         &[data-index='4'] {
           grid-column: span 7 / span 7;
         }
-
 
         & > h3 {
           font-size: 3rem;

@@ -1,5 +1,6 @@
 .container {
   padding: 0 2rem 2rem;
+  background: var(--bg-primary);
 
   .headingCnt {
     font-size: clamp(3.5rem, 2.3571rem + 4vi, 10.5rem);

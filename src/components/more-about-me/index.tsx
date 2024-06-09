@@ -18,10 +18,11 @@ const MoreAboutMe = () => {
 
       <div className={classes.textCnt}>
         <p>
-          Hi there. I&apos;m Abinash Shasini. I&apos;m an India based software
-          Engineer with a goal-driven creative mindset and passion for learning
-          and innovating. I specialise in creating beautiful, usable and
-          professional websites & mobile applications with best practice.
+          Hello! I&apos;m Abinash Shasini, a software engineer from India with a
+          creative spark and an insatiable passion for learning and innovating.
+          I specialize in crafting stunning, user-friendly, and professional
+          websites and mobile apps. Think of me as the Michelangelo of
+          coding—except my Sistine Chapel is your next project!
         </p>
       </div>
     </section>

@@ -13,20 +13,20 @@ import FooterSection from '@/components/footer';
 
 export default function Home() {
   /** State to show loading state when user comes to the page or refreshes */
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   /** Effect to initialise the locomotive scroll and remove the preloader after 3s */
   useEffect(() => {
     (async () => {
       const Lenis = (await import('@studio-freight/lenis')).default;
-      // const lenis = new Lenis();
+      const lenis = new Lenis();
 
-      // /** Functiont to initiate smooth scroll */
-      // function raf(time: any) {
-      //   lenis.raf(time);
-      //   requestAnimationFrame(raf);
-      // }
-      // requestAnimationFrame(raf);
+      /** Functiont to initiate smooth scroll */
+      function raf(time: any) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
 
       setTimeout(() => {
         setIsLoading(false);
@@ -38,12 +38,12 @@ export default function Home() {
 
   return (
     <main>
-      {/* <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait">
         {isLoading && <Preloader />}
-      </AnimatePresence> */}
-      {/* <Header />
+      </AnimatePresence>
+      <Header />
       <HeroSection />
-      <AboutSection /> */}
+      <AboutSection />
       <Projects />
       <MoreAboutMe />
       <Experience />

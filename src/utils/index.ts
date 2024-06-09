@@ -2,7 +2,7 @@ import hero from '/public/assets/images/hero.svg';
 import shape1 from '/public/assets/images/shape1.svg';
 import shape2 from '/public/assets/images/shape2.svg';
 import shape3 from '/public/assets/images/shape3.svg';
-import project1 from '/public/assets/images/project1.svg';
+import project1 from '/public/assets/images/project1.png';
 import project2 from '/public/assets/images/project2.svg';
 import project3 from '/public/assets/images/project3.svg';
 import project4 from '/public/assets/images/project4.svg';
@@ -64,7 +64,7 @@ export const projectData = [
     img: project1,
     year: 2024,
     technology: [next, node, typescript, html, css],
-    title: 'Detailed Leetcode Clone.',
+    title: 'Leetcode Clone.',
     description:
       'Crafted a LeetCode-inspired platform with ReactJS, NodeJS, and MongoDB, delivering a seamless coding experience. Learned full-stack development and database architecture.',
   },
@@ -73,7 +73,7 @@ export const projectData = [
     img: project2,
     year: 2023,
     technology: [next, typescript, tailwind, react, css],
-    title: 'Complete TMDB Clone.',
+    title: 'TMDB Clone.',
     description:
       "Built TMDB's official website with Next.js, leveraging SSR for peak performance. Expertly balanced frontend finesse with backend efficiency.",
   },
@@ -82,7 +82,7 @@ export const projectData = [
     img: project3,
     year: 2024,
     technology: [react, three, tailwind, gsap, typescript],
-    title: 'Apple iPhone 15 Website.',
+    title: 'iPhone 15 Website.',
     description:
       'Crafted an engaging Apple iPhone 15 website with React.js, Three.js, and GSAP, seamlessly blending stunning visuals with smooth animations for an immersive user experience.',
   },
@@ -91,7 +91,7 @@ export const projectData = [
     img: project4,
     year: 2022,
     technology: [react, next, tailwind, html, css],
-    title: 'Fun Trivia Quiz App.',
+    title: 'Trivia Quiz App.',
     description:
       'Engineered a dynamic trivia quiz app using React.js, JavaScript, and trivia APIs, delivering an engaging and interactive experience for users while honing skills in frontend development and API integration.',
   },

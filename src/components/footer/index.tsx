@@ -4,7 +4,6 @@ import { BiSolidMobileVibration } from 'react-icons/bi';
 import { IoNewspaper } from 'react-icons/io5';
 import Link from 'next/link';
 import Magnetic from '@/commons/magnetic';
-
 import classes from './style.module.scss';
 
 const FooterSection = () => {
