@@ -10,7 +10,7 @@
     --text-base-deep: #a29e9a;
     --bg-primary: #e8e8e3;
     --bg-secondary: #B3B3A3;
-    --bg-tertiary: #a29e9a;
+    --bg-tertiary: #e1e1db;
     --text-base--large: clamp(1rem, 0.8571rem + 0.7143vi, 1.5rem);
     --heading-base-medium: clamp(3rem, 2.25rem + 3.75vi, 5.625rem)
 }

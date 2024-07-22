@@ -31,9 +31,9 @@ const AboutSection = () => {
         end: 'bottom 80%',
       },
       y: 0,
-      stagger: 0.01,
-      duration: 0.3,
-      opacity: 1,
+      stagger: 0.005,
+      opacity: 0.8,
+      ease: 'power1.inOut',
     });
   }, []);
 
