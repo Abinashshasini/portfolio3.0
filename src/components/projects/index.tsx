@@ -7,7 +7,7 @@ import classes from './style.module.scss';
 
 const Projects = () => {
   return (
-    <div className={`section-padding ${classes.container}`}>
+    <section className={`section-padding ${classes.container}`} id="work">
       <div className={classes.headingCnt}>
         <h2 aria-hidden="true" id="project_heading">
           <span>Personal</span>
@@ -55,7 +55,7 @@ const Projects = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -8,7 +8,7 @@ import classes from './style.module.scss';
 
 const FooterSection = () => {
   return (
-    <div className={classes.container}>
+    <footer className={classes.container}>
       <div className={classes.headingCnt}>
         <h1>GET IN TOUCH</h1>
       </div>
@@ -72,7 +72,7 @@ const FooterSection = () => {
           </Magnetic>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

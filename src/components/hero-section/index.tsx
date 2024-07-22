@@ -67,7 +67,7 @@ const HeroSection = () => {
         className={classes.container}
         id="hero_text_cnt"
       >
-        <div className={classes.warrper}>
+        <section className={classes.warrper}>
           <div className={classes.textWrp}>
             <h2 className="league-gothic">
               {handleSplitPhrase("HI! I'M ABINASH", 'hero_heading-text')}
@@ -101,7 +101,7 @@ const HeroSection = () => {
             </Magnetic>
             <p>Scroll Down</p>
           </div>
-        </div>
+        </section>
       </motion.section>
       <div className={classes.heroCircleImage}>
         <Image src={HeroSVG} alt="Hero circle image" width={100} height={100} />

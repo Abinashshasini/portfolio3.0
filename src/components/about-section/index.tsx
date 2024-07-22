@@ -26,7 +26,7 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <div className={`section-padding ${classes.container}`}>
+    <section className={`section-padding ${classes.container}`} id="services">
       <div className={classes.heading}>
         <h2 id="about_heading-title">
           {handleSplitPhrase('What i do.', 'about_heading-title')}
@@ -42,7 +42,7 @@ const AboutSection = () => {
           <SkillCard index={index} data={element} key={element.id} />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
