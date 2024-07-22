@@ -19,8 +19,20 @@ const AboutSection = () => {
         end: 'bottom 80%',
       },
       y: 0,
-      stagger: 0.01,
+      stagger: 0.05,
       duration: 0.5,
+      opacity: 1,
+    });
+
+    gsap.to('#about_heading-description', {
+      scrollTrigger: {
+        trigger: '#about_heading-description',
+        start: 'top 90%',
+        end: 'bottom 80%',
+      },
+      y: 0,
+      stagger: 0.01,
+      duration: 0.3,
       opacity: 1,
     });
   }, []);
@@ -29,13 +41,14 @@ const AboutSection = () => {
     <section className={`section-padding ${classes.container}`} id="services">
       <div className={classes.heading}>
         <h2 id="about_heading-title">
-          {handleSplitPhrase('What i do.', 'about_heading-title')}
+          {handleSplitPhrase('What i do /', 'about_heading-title')}
         </h2>
-        <p>
-          A skilled frontend web developer adept creating elegant modern
-          designs. seamlessly integrating creativity with tech to deliver
-          captivating user experience.
-        </p>
+        <h3>
+          {handleSplitPhrase(
+            'A skilled frontend web developer adept creating elegant modern designs, seamlessly integrating creativity with tech to delivercaptivating user experience.',
+            'about_heading-description'
+          )}
+        </h3>
       </div>
       <div className={classes.skillsWrp}>
         {skillsData.map((element: TAboutData, index: number) => (
