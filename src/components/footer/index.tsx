@@ -2,15 +2,39 @@ import React from 'react';
 import { FaMailBulk } from 'react-icons/fa';
 import { BiSolidMobileVibration } from 'react-icons/bi';
 import { IoNewspaper } from 'react-icons/io5';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
 import Link from 'next/link';
 import Magnetic from '@/commons/magnetic';
 import classes from './style.module.scss';
+import { handleSplitPhrase } from '@/utils/split';
 
+gsap.registerPlugin(ScrollTrigger);
 const FooterSection = () => {
+  /** useGSAP hook to animate the heading and description */
+  useGSAP(() => {
+    gsap.to('#footer_heading-title', {
+      scrollTrigger: {
+        trigger: '#footer_heading-title',
+        start: 'top 90%',
+        end: 'bottom 80%',
+      },
+      y: 0,
+      stagger: 0.02,
+      duration: 0.5,
+      opacity: 1,
+    });
+  }, []);
   return (
-    <footer className={classes.container}>
+    <footer className={`section-padding ${classes.container}`}>
       <div className={classes.headingCnt}>
-        <h1>GET IN TOUCH</h1>
+        <h2 id="footer_heading-title" aria-hidden="true">
+          {handleSplitPhrase(
+            'Have Something In Mind /',
+            'footer_heading-title'
+          )}
+        </h2>
       </div>
       <div className={classes.footerHeading}>
         <p>(Contact ME)</p>
@@ -21,13 +45,10 @@ const FooterSection = () => {
       </div>
       <div className={classes.infoContainer}>
         <div className={classes.infosWrp}>
-          <IoNewspaper /> <span>My Resume</span>
+          <IoNewspaper /> <span>Resume</span>
         </div>
         <div className={classes.infosWrp}>
-          <FaMailBulk /> <span>abinashshasini125@gmail.com</span>
-        </div>
-        <div className={classes.infosWrp}>
-          <BiSolidMobileVibration /> <span>7749012570</span>
+          <BiSolidMobileVibration /> <span>Phone</span>
         </div>
       </div>
 
