@@ -23,6 +23,7 @@ import typescript from '/public/assets/images/typescript.svg';
 import gsap from '/public/assets/images/gsap.svg';
 import html from '/public/assets/images/html.svg';
 import css from '/public/assets/images/css.svg';
+import emailPic from '/public/assets/images/email.png';
 
 export const HeroSVG = hero;
 export const LogoIcn = logo;
@@ -30,6 +31,7 @@ export const skillsIn = skills;
 export const sideMenuImage = sideMenuSvg;
 export const ArrowIcon = ArrowSvg;
 export const AbinashImage = AbinashPhoto;
+export const AbinashEmailPic = emailPic;
 
 export const skillsData = [
   {

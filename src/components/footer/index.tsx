@@ -1,5 +1,4 @@
 import React from 'react';
-import { FaMailBulk } from 'react-icons/fa';
 import { BiSolidMobileVibration } from 'react-icons/bi';
 import { IoNewspaper } from 'react-icons/io5';
 import { useGSAP } from '@gsap/react';
@@ -7,8 +6,9 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import Link from 'next/link';
 import Magnetic from '@/commons/magnetic';
-import classes from './style.module.scss';
 import { handleSplitPhrase } from '@/utils/split';
+import ContactCard from './contact-card';
+import classes from './style.module.scss';
 
 gsap.registerPlugin(ScrollTrigger);
 const FooterSection = () => {
@@ -51,6 +51,8 @@ const FooterSection = () => {
           <BiSolidMobileVibration /> <span>Phone</span>
         </div>
       </div>
+
+      <ContactCard />
 
       <div className={classes.copyrightinfo}>
         <h3>
