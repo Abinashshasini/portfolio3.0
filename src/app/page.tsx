@@ -13,7 +13,7 @@ import FooterSection from '@/components/footer';
 
 export default function Home() {
   /** State to show loading state when user comes to the page or refreshes */
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   /** Effect to initialise the locomotive scroll and remove the preloader after 3s */
   useEffect(() => {
@@ -38,11 +38,11 @@ export default function Home() {
 
   return (
     <main>
-      <AnimatePresence mode="wait">
+      {/* <AnimatePresence mode="wait">
         {isLoading && <Preloader />}
       </AnimatePresence>
       <Header />
-      <HeroSection />
+      <HeroSection /> */}
       <AboutSection />
       <Projects />
       <MoreAboutMe />

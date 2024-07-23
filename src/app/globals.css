@@ -2,17 +2,19 @@
 
 
 :root {
-    --black-primary: #080807;
+    --black-primary: rgb(19, 19, 17);
     --black-secondary: #202024;
     --text-primary: #393632;
-    --text-secondary: #6b645c;
-    --text-tertiary: #d1d1c7;
+    --text-secondary: rgb(107, 100, 92);
+    --text-tertiary: rgb(209, 209, 199);
     --text-base-deep: #a29e9a;
     --bg-primary: #e8e8e3;
     --bg-secondary: #B3B3A3;
     --bg-tertiary: #e1e1db;
     --text-base--large: clamp(1rem, 0.8571rem + 0.7143vi, 1.5rem);
-    --heading-base-medium: clamp(3rem, 2.25rem + 3.75vi, 5.625rem)
+    --text-base--small: clamp(1rem, 0.9286rem + 0.3571vi, 1.25rem);
+    --text-base-medium: clamp(1.25rem, 1.0359rem + 1.0707vi, 1.9995rem);
+    --heading-base-medium: clamp(3rem, 2.25rem + 3.75vi, 5.625rem);
 }
 
 /* Font Family */

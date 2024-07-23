@@ -19,7 +19,7 @@ const AboutSection = () => {
         end: 'bottom 80%',
       },
       y: 0,
-      stagger: 0.05,
+      stagger: 0.02,
       duration: 0.5,
       opacity: 1,
     });
@@ -45,7 +45,7 @@ const AboutSection = () => {
         </h2>
         <h3>
           {handleSplitPhrase(
-            'A skilled frontend web developer adept creating elegant modern designs, seamlessly integrating creativity with tech to delivercaptivating user experience.',
+            'A skilled frontend web developer adept creating elegant modern designs, seamlessly integrating creativity with tech to deliver captivating user experience.',
             'about_heading-description'
           )}
         </h3>
