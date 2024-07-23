@@ -43,7 +43,6 @@ export default function Home() {
       </AnimatePresence>
       <Header />
       <HeroSection />
-      {/* <div style={{ height: '100vh', background: 'yellow' }}></div> */}
       <AboutSection />
       <Projects />
       <MoreAboutMe />
