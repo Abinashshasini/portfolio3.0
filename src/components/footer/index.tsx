@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { BiSolidMobileVibration } from 'react-icons/bi';
 import { IoNewspaper } from 'react-icons/io5';
@@ -28,6 +29,9 @@ const FooterSection = () => {
   }, []);
 
   /** Function to call my number */
+  const handleCall = () => {
+    window.location.href = `tel:7749012570`;
+  };
   return (
     <footer className={`section-padding ${classes.container}`} id="contact">
       <div className={classes.headingCnt}>
@@ -55,11 +59,9 @@ const FooterSection = () => {
           </div>
         </a>
 
-        <a href="tel:+91 7749012570">
-          <div className={classes.infosWrp}>
-            <BiSolidMobileVibration /> <span>Phone</span>
-          </div>
-        </a>
+        <div className={classes.infosWrp} onClick={handleCall}>
+          <BiSolidMobileVibration /> <span>Phone</span>
+        </div>
       </div>
 
       <ContactCard />

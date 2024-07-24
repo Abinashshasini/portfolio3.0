@@ -6,7 +6,7 @@ import classes from './style.module.scss';
 
 const Reviews = () => {
   return (
-    <div className={classes.container}>
+    <section className={classes.container}>
       <div className={classes.reviewsHeading}>
         <p>(Reviews)</p>
         <p>
@@ -18,7 +18,7 @@ const Reviews = () => {
       {reviewsData.map((element: TReviewsData) => (
         <ReviewsCard data={element} key={element.id} />
       ))}
-    </div>
+    </section>
   );
 };
 

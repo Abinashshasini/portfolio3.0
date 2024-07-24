@@ -1,5 +1,7 @@
 .container {
   background: var(--bg-primary);
+  z-index: 20;
+  position: relative;
 
   .headingCnt {
     & > h2 {
