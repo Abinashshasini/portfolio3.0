@@ -1,15 +1,36 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
+import dynamic from 'next/dynamic';
 import Header from '@/components/header';
 import Preloader from '@/components/preloader';
 import HeroSection from '@/components/hero-section';
-import AboutSection from '@/components/about-section';
-import Projects from '@/components/projects';
-import Experience from '@/components/experience';
-import Reviews from '@/components/reviews';
-import MoreAboutMe from '@/components/more-about-me';
-import FooterSection from '@/components/footer';
+
+/** Lazyloading components */
+const AboutSection = dynamic(
+  () =>
+    import('@/components/about-section' /* webpackChunkName: 'About-Section' */)
+);
+const ProjectsSection = dynamic(
+  () =>
+    import('@/components/projects' /* webpackChunkName: 'Project-Section' */)
+);
+const ExperienceSection = dynamic(
+  () =>
+    import(
+      '@/components/experience' /* webpackChunkName: 'Experience-Section' */
+    )
+);
+const MoreAboutMeSection = dynamic(
+  () =>
+    import('@/components/reviews' /* webpackChunkName: 'MoreABoutMe-Section' */)
+);
+const ReviewsSection = dynamic(
+  () => import('@/components/reviews' /* webpackChunkName: 'Reviews-Section' */)
+);
+const FooterSection = dynamic(
+  () => import('@/components/footer' /* webpackChunkName: 'Footer-Section' */)
+);
 
 export default function Home() {
   /** State to show loading state when user comes to the page or refreshes */
@@ -44,10 +65,10 @@ export default function Home() {
       <Header />
       <HeroSection />
       <AboutSection />
-      <Projects />
-      <MoreAboutMe />
-      <Experience />
-      <Reviews />
+      <ProjectsSection />
+      <MoreAboutMeSection />
+      <ExperienceSection />
+      <ReviewsSection />
       <FooterSection />
     </main>
   );
