@@ -86,7 +86,9 @@ const Header: FC = () => {
         <span data-open={showSideMenu}></span>
       </button>
 
-      <AnimatePresence>{showSideMenu && <SideMenu />}</AnimatePresence>
+      <AnimatePresence>
+        {showSideMenu && <SideMenu hideSideMenu={setShowSideMenu} />}
+      </AnimatePresence>
     </header>
   );
 };

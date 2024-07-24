@@ -15,11 +15,13 @@ interface IProps {
   data: TNavData;
   isActive: boolean;
   setSelectedIndicator: Dispatch<SetStateAction<string>>;
+  hideSideMenu: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const LinkComponent: FC<IProps> = ({
   data,
   isActive,
+  hideSideMenu,
   setSelectedIndicator,
 }) => {
   const { title, href, index } = data;
@@ -35,6 +37,7 @@ const LinkComponent: FC<IProps> = ({
       initial="initial"
       animate="enter"
       exit="exit"
+      onClick={() => hideSideMenu(false)}
     >
       <motion.div
         variants={scale}

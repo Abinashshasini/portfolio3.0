@@ -9,7 +9,11 @@ import { navItems, sideMenuImage } from '@/utils';
 import { TNavData } from '@/types';
 import classes from './style.module.scss';
 
-const SideMenu = () => {
+const SideMenu = ({
+  hideSideMenu,
+}: {
+  hideSideMenu: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
   const pathname = usePathname();
   const [selectedIndicator, setSelectedIndicator] = useState(pathname);
 
@@ -41,6 +45,7 @@ const SideMenu = () => {
                     data={{ ...data, index }}
                     isActive={selectedIndicator == data.href}
                     setSelectedIndicator={setSelectedIndicator}
+                    hideSideMenu={hideSideMenu}
                   ></Link>
                 );
               })}

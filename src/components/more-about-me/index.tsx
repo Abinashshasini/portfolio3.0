@@ -49,7 +49,7 @@ const MoreAboutMe = () => {
   }, []);
 
   return (
-    <section className={`section-padding ${classes.container}`}>
+    <section className={`section-padding ${classes.container}`} id="about">
       <div className={classes.headingCnt}>
         <h2 id="moreaboutme_heading-title" aria-hidden="true">
           {handleSplitPhrase(

@@ -29,7 +29,7 @@ const FooterSection = () => {
 
   /** Function to call my number */
   return (
-    <footer className={`section-padding ${classes.container}`}>
+    <footer className={`section-padding ${classes.container}`} id="contact">
       <div className={classes.headingCnt}>
         <h2 id="footer_heading-title" aria-hidden="true">
           {handleSplitPhrase(

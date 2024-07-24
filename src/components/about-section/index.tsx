@@ -38,7 +38,7 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section className={`section-padding ${classes.container}`} id="services">
+    <section className={`section-padding ${classes.container}`} id="skills">
       <div className={classes.heading}>
         <h2 id="about_heading-title">
           {handleSplitPhrase('What i do /', 'about_heading-title')}

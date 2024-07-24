@@ -128,8 +128,8 @@ export const navItems = [
   },
   {
     id: '#02@',
-    title: 'Services',
-    href: '/#services',
+    title: 'Skills',
+    href: '/#skills',
   },
   {
     id: '#03@',
