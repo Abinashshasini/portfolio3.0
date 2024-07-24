@@ -26,6 +26,8 @@ const FooterSection = () => {
       opacity: 1,
     });
   }, []);
+
+  /** Function to call my number */
   return (
     <footer className={`section-padding ${classes.container}`}>
       <div className={classes.headingCnt}>
@@ -44,12 +46,20 @@ const FooterSection = () => {
         </p>
       </div>
       <div className={classes.infoContainer}>
-        <div className={classes.infosWrp}>
-          <IoNewspaper /> <span>Resume</span>
-        </div>
-        <div className={classes.infosWrp}>
-          <BiSolidMobileVibration /> <span>Phone</span>
-        </div>
+        <a
+          href="../../../public/assets/images/email.png"
+          download="abinsh-shasini-resume.png"
+        >
+          <div className={classes.infosWrp}>
+            <IoNewspaper /> <span>Resume</span>
+          </div>
+        </a>
+
+        <a href="tel:+91 7749012570">
+          <div className={classes.infosWrp}>
+            <BiSolidMobileVibration /> <span>Phone</span>
+          </div>
+        </a>
       </div>
 
       <ContactCard />
