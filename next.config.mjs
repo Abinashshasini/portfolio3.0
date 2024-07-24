@@ -1,12 +1,21 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-  output: 'standalone',
-  webpack: (config, options) => {
+  webpack: (config, { isServer }) => {
     config.module.rules.push({
-      test: /\.(pdf)$/,
-      type: 'asset/resource',
+      test: /\.pdf$/,
+      use: [
+        {
+          loader: 'file-loader',
+          options: {
+            name: '[path][name].[ext]',
+            publicPath: '/_next/static/files',
+            outputPath: 'static/files',
+          },
+        },
+      ],
     });
+
     return config;
   },
 };

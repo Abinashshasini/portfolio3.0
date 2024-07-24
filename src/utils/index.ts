@@ -13,6 +13,7 @@ import ArrowSvg from '/public/assets/images/arrow.svg';
 import ShubhamPhoto from '/public/assets/images/shubham.png';
 import AsutoshPhoto from '/public/assets/images/ashutosh.jpeg';
 import AbinashPhoto from '/public/assets/images/abinash.jpg';
+
 /** Skills images */
 import react from '/public/assets/images/react.svg';
 import next from '/public/assets/images/next.svg';
@@ -24,7 +25,6 @@ import gsap from '/public/assets/images/gsap.svg';
 import html from '/public/assets/images/html.svg';
 import css from '/public/assets/images/css.svg';
 import emailPic from '/public/assets/images/email.png';
-import resume from '/public/assets/images/abinash-new-resume.pdf';
 
 export const HeroSVG = hero;
 export const LogoIcn = logo;
@@ -33,7 +33,6 @@ export const sideMenuImage = sideMenuSvg;
 export const ArrowIcon = ArrowSvg;
 export const AbinashImage = AbinashPhoto;
 export const AbinashEmailPic = emailPic;
-export const AbinshResume = resume;
 
 export const skillsData = [
   {

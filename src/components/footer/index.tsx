@@ -10,7 +10,6 @@ import Magnetic from '@/commons/magnetic';
 import { handleSplitPhrase } from '@/utils/split';
 import ContactCard from './contact-card';
 import classes from './style.module.scss';
-import { AbinshResume } from '@/utils';
 
 gsap.registerPlugin(ScrollTrigger);
 const FooterSection = () => {
@@ -52,7 +51,10 @@ const FooterSection = () => {
         </p>
       </div>
       <div className={classes.infoContainer}>
-        <a href={AbinshResume} download="abinsh-shasini-resume.pdf">
+        <a
+          href="assets/images/abinash-new-resume.pdf"
+          download="abinsh-shasini-resume.pdf"
+        >
           <div className={classes.infosWrp}>
             <IoNewspaper /> <span>Resume</span>
           </div>
