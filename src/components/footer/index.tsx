@@ -10,6 +10,7 @@ import Magnetic from '@/commons/magnetic';
 import { handleSplitPhrase } from '@/utils/split';
 import ContactCard from './contact-card';
 import classes from './style.module.scss';
+import { AbinshResume } from '@/utils';
 
 gsap.registerPlugin(ScrollTrigger);
 const FooterSection = () => {
@@ -29,9 +30,10 @@ const FooterSection = () => {
   }, []);
 
   /** Function to call my number */
-  const handleCall = () => {
+  const handleClickOnCall = () => {
     window.location.href = `tel:7749012570`;
   };
+
   return (
     <footer className={`section-padding ${classes.container}`} id="contact">
       <div className={classes.headingCnt}>
@@ -50,16 +52,13 @@ const FooterSection = () => {
         </p>
       </div>
       <div className={classes.infoContainer}>
-        <a
-          href="../../../public/assets/images/email.png"
-          download="abinsh-shasini-resume.png"
-        >
+        <a href={AbinshResume} download="abinsh-shasini-resume.pdf">
           <div className={classes.infosWrp}>
             <IoNewspaper /> <span>Resume</span>
           </div>
         </a>
 
-        <div className={classes.infosWrp} onClick={handleCall}>
+        <div className={classes.infosWrp} onClick={handleClickOnCall}>
           <BiSolidMobileVibration /> <span>Phone</span>
         </div>
       </div>

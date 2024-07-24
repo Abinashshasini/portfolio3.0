@@ -43,7 +43,7 @@ const MoreAboutMe = () => {
       },
       y: 0,
       duration: 0.7,
-      opacity: 0.8,
+      opacity: 0.9,
       ease: 'power1.inOut',
     });
   }, []);

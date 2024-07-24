@@ -24,6 +24,7 @@ import gsap from '/public/assets/images/gsap.svg';
 import html from '/public/assets/images/html.svg';
 import css from '/public/assets/images/css.svg';
 import emailPic from '/public/assets/images/email.png';
+import resume from '/public/assets/images/abinash-new-resume.pdf';
 
 export const HeroSVG = hero;
 export const LogoIcn = logo;
@@ -32,6 +33,7 @@ export const sideMenuImage = sideMenuSvg;
 export const ArrowIcon = ArrowSvg;
 export const AbinashImage = AbinashPhoto;
 export const AbinashEmailPic = emailPic;
+export const AbinshResume = resume;
 
 export const skillsData = [
   {
