@@ -38,10 +38,8 @@ const Header: FC = () => {
       const lenis = new Lenis();
       if (showSideMenu) {
         document.body.style.overflow = 'hidden';
-        lenis.stop();
       } else {
         document.body.style.overflow = 'auto';
-        lenis.start();
       }
     })();
   }, [showSideMenu]);
