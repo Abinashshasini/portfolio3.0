@@ -23,7 +23,9 @@ const ExperienceSection = dynamic(
 );
 const MoreAboutMeSection = dynamic(
   () =>
-    import('@/components/reviews' /* webpackChunkName: 'MoreABoutMe-Section' */)
+    import(
+      '@/components/more-about-me' /* webpackChunkName: 'MoreABoutMe-Section' */
+    )
 );
 const ReviewsSection = dynamic(
   () => import('@/components/reviews' /* webpackChunkName: 'Reviews-Section' */)
