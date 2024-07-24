@@ -52,7 +52,7 @@ const FooterSection = () => {
       </div>
       <div className={classes.infoContainer}>
         <a
-          href="assets/images/abinash-new-resume.pdf"
+          href="assets/images/abinash-shasini-resume.pdf"
           download="abinsh-shasini-resume.pdf"
         >
           <div className={classes.infosWrp}>
