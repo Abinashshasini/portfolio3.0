@@ -26,6 +26,7 @@ const HeroSection = () => {
         start: '60% 95%',
         end: '60% center',
         scrub: true,
+        markers: true,
       },
       duration: 4,
       opacity: 0,
@@ -37,7 +38,7 @@ const HeroSection = () => {
       {
         y: 0,
         scale: 1,
-        delay: 4.5,
+        delay: 4,
         duration: 0.8,
         opacity: 1,
         ease: 'power1.inOut',
@@ -46,8 +47,8 @@ const HeroSection = () => {
 
     gsap.to('#hero_heading-text', {
       y: 0,
-      stagger: 0.03,
-      delay: 2.9,
+      stagger: 0.02,
+      delay: 2.5,
       duration: 0.1,
     });
   }, []);
