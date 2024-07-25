@@ -11,7 +11,7 @@ type Tprops = {
 
 const ReviewsCard: FC<Tprops> = ({ data }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref);
 
   return (
     <div
