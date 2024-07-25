@@ -20,36 +20,16 @@ const HeroSection = () => {
    * Animate the title letter one by one.
    */
   useGSAP(() => {
-    const animations = gsap.matchMedia();
-
-    animations.add('(max-width: 720px)', () => {
-      gsap.to('#hero_text_cnt', {
-        scrollTrigger: {
-          trigger: '#hero_text_cnt',
-          start: '40% 95%',
-          end: '60% 30%',
-          scrub: true,
-          markers: true,
-        },
-        duration: 4,
-        opacity: 0,
-        transform: 'translateY(80px) scale(0.9) translateZ(0px)',
-      });
-    });
-
-    animations.add('(min-width: 721px)', () => {
-      gsap.to('#hero_text_cnt', {
-        scrollTrigger: {
-          trigger: '#hero_text_cnt',
-          start: '60% 95%',
-          end: '70% 30%',
-          scrub: true,
-          markers: true,
-        },
-        duration: 4,
-        opacity: 0,
-        transform: 'translateY(80px) scale(0.9) translateZ(0px)',
-      });
+    gsap.to('#hero_text_cnt', {
+      scrollTrigger: {
+        trigger: '#hero_text_cnt',
+        start: '40% 95%',
+        end: '60% 30%',
+        scrub: true,
+      },
+      duration: 4,
+      opacity: 0,
+      transform: 'translateY(80px) scale(0.9) translateZ(0px)',
     });
 
     gsap.fromTo(

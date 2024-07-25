@@ -88,12 +88,10 @@
         }
       }
 
-      & > h3 {
+      .description {
         width: 50%;
-        margin-top: 1rem;
-
-        & > span {
-          margin-right: 9px;
+        & > h3 {
+          margin-top: 1rem;
         }
       }
     }
