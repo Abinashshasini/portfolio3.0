@@ -20,12 +20,6 @@ const HeroSection = () => {
    * Animate the title letter one by one.
    */
   useGSAP(() => {
-    gsap.fromTo(
-      '#hero_circle',
-      { scale: 0.3 },
-      { scale: 1, delay: 3, duration: 1, ease: 'power1.inOut' }
-    );
-
     gsap.to('#hero_text_cnt', {
       scrollTrigger: {
         trigger: '#hero_text_cnt',

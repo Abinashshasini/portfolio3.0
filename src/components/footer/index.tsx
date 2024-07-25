@@ -65,6 +65,7 @@ const FooterSection = () => {
         </div>
       </div>
 
+      {/* Contact card for email recive */}
       <ContactCard />
 
       <div className={classes.copyrightinfo}>
