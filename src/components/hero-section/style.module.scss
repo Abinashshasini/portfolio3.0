@@ -67,8 +67,8 @@
       flex-direction: column;
 
       .arrowIconContainer {
-        width: 60px;
-        height: 60px;
+        width: 55px;
+        height: 55px;
         border-radius: 50%;
         border: 3px solid var(--black-primary);
         display: flex;
@@ -76,7 +76,7 @@
         align-items: center;
 
         & > img {
-          height: 13px;
+          height: 11px;
           transform: rotate(-90deg);
         }
       }
