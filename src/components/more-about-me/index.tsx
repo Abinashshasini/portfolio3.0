@@ -50,7 +50,7 @@ const MoreAboutMe = () => {
     gsap.to('#about', {
       scrollTrigger: {
         trigger: '#about',
-        start: '50% 50%',
+        start: '60% 35%',
         end: '100% 60%',
         scrub: true,
       },
