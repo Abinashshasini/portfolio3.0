@@ -46,6 +46,18 @@ const MoreAboutMe = () => {
       opacity: 0.9,
       ease: 'power1.inOut',
     });
+
+    gsap.to('#about', {
+      scrollTrigger: {
+        trigger: '#about',
+        start: '50% 50%',
+        end: '100% 60%',
+        scrub: true,
+        markers: true,
+      },
+      duration: 4,
+      transform: 'scale(0.97)',
+    });
   }, []);
 
   return (
