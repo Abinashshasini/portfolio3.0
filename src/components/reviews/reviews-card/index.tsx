@@ -9,19 +9,9 @@ type Tprops = {
   data: TReviewsData;
 };
 
-export const slideUp = {
-  initial: {
-    y: 100,
-  },
-  enter: {
-    y: 0,
-    transition: { duration: 1.2, ease: [0.33, 1, 0.68, 1], delay: 3 },
-  },
-};
-
 const ReviewsCard: FC<Tprops> = ({ data }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref);
+  const isInView = useInView(ref, { once: true });
 
   return (
     <div

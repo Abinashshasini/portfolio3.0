@@ -10,6 +10,7 @@ import { useInView, motion } from 'framer-motion';
 import Magnetic from '@/commons/magnetic';
 import { handleSplitPhrase } from '@/utils/split';
 import ContactCard from './contact-card';
+import { slideUpDefaultAnimation } from '@/commons/animation';
 import classes from './style.module.scss';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -42,20 +43,6 @@ const FooterSection = () => {
     window.location.href = `tel:7749012570`;
   };
 
-  const slideUp = {
-    initial: {
-      y: '100%',
-    },
-    open: (i: number) => ({
-      y: '0%',
-      transition: { duration: 0.5, delay: 0.01 * i },
-    }),
-    closed: {
-      y: '100%',
-      transition: { duration: 0.5 },
-    },
-  };
-
   return (
     <footer className={`section-padding ${classes.container}`} id="contact">
       <div className={classes.headingCnt}>
@@ -73,7 +60,7 @@ const FooterSection = () => {
             return (
               <span key={index} className={classes.mask}>
                 <motion.span
-                  variants={slideUp}
+                  variants={slideUpDefaultAnimation}
                   custom={index}
                   animate={isInView ? 'open' : 'closed'}
                   key={index}
