@@ -53,7 +53,6 @@ const MoreAboutMe = () => {
         start: '50% 50%',
         end: '100% 60%',
         scrub: true,
-        markers: true,
       },
       duration: 4,
       transform: 'scale(0.97)',
