@@ -116,16 +116,16 @@
       }
     }
   }
-}
 
-.submitbuttonLoader {
-  display: none;
-  border: 3px solid rgb(232 232 227);
-  border-radius: 50%;
-  border-top: 3px solid var(--text-secondary);
-  width: 1rem;
-  height: 1rem;
-  animation: loginloaderAnimation 1s linear infinite;
+  .submitbuttonLoader {
+    display: none;
+    border: 3px solid rgb(232 232 227);
+    border-radius: 50%;
+    border-top: 3px solid var(--text-secondary);
+    width: 1rem;
+    height: 1rem;
+    animation: loginloaderAnimation 1s linear infinite;
+  }
 }
 
 @keyframes loginloaderAnimation {
@@ -134,5 +134,14 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    .submitbutton {
+      width: 180px;
+      height: 40px;
+    }
   }
 }

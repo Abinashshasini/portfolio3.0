@@ -1,11 +1,12 @@
 'use client';
-import React from 'react';
+import React, { useRef } from 'react';
 import { BiSolidMobileVibration } from 'react-icons/bi';
 import { IoNewspaper } from 'react-icons/io5';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import Link from 'next/link';
+import { useInView, motion } from 'framer-motion';
 import Magnetic from '@/commons/magnetic';
 import { handleSplitPhrase } from '@/utils/split';
 import ContactCard from './contact-card';
@@ -13,6 +14,14 @@ import classes from './style.module.scss';
 
 gsap.registerPlugin(ScrollTrigger);
 const FooterSection = () => {
+  /** Footer description */
+  const description =
+    "Drop me a line anytime for job updates or just to connect. I'm here to help!";
+
+  /** Required refs and hooks */
+  const descriptionRef = useRef(null);
+  const isInView = useInView(descriptionRef);
+
   /** useGSAP hook to animate the heading and description */
   useGSAP(() => {
     gsap.to('#footer_heading-title', {
@@ -33,6 +42,20 @@ const FooterSection = () => {
     window.location.href = `tel:7749012570`;
   };
 
+  const slideUp = {
+    initial: {
+      y: '100%',
+    },
+    open: (i: number) => ({
+      y: '0%',
+      transition: { duration: 0.5, delay: 0.01 * i },
+    }),
+    closed: {
+      y: '100%',
+      transition: { duration: 0.5 },
+    },
+  };
+
   return (
     <footer className={`section-padding ${classes.container}`} id="contact">
       <div className={classes.headingCnt}>
@@ -43,26 +66,42 @@ const FooterSection = () => {
           )}
         </h2>
       </div>
-      <div className={classes.footerHeading}>
+      <div className={classes.footerHeading} ref={descriptionRef}>
         <p>(Contact ME)</p>
         <p>
-          Drop me a line anytime for job updates or just to connect. I&apos;m
-          here to help!
+          {description.split(' ').map((word, index) => {
+            return (
+              <span key={index} className={classes.mask}>
+                <motion.span
+                  variants={slideUp}
+                  custom={index}
+                  animate={isInView ? 'open' : 'closed'}
+                  key={index}
+                >
+                  {word}
+                </motion.span>
+              </span>
+            );
+          })}
         </p>
       </div>
       <div className={classes.infoContainer}>
-        <a
-          href="assets/images/abinash-shasini-resume.pdf"
-          download="abinsh-shasini-resume.pdf"
-        >
-          <div className={classes.infosWrp}>
-            <IoNewspaper /> <span>Resume</span>
-          </div>
-        </a>
+        <Magnetic>
+          <a
+            href="assets/images/abinash-shasini-resume.pdf"
+            download="abinsh-shasini-resume.pdf"
+          >
+            <div className={classes.infosWrp}>
+              <IoNewspaper /> <span>Resume</span>
+            </div>
+          </a>
+        </Magnetic>
 
-        <div className={classes.infosWrp} onClick={handleClickOnCall}>
-          <BiSolidMobileVibration /> <span>Phone</span>
-        </div>
+        <Magnetic>
+          <div className={classes.infosWrp} onClick={handleClickOnCall}>
+            <BiSolidMobileVibration /> <span>Phone</span>
+          </div>
+        </Magnetic>
       </div>
 
       {/* Contact card for email recive */}

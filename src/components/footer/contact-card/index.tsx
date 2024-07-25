@@ -2,8 +2,9 @@
 import React, { useState } from 'react';
 import { z } from 'zod';
 import { AbinashEmailPic } from '@/utils';
-import classes from './style.module.scss';
 import Toast from '@/components/toast';
+import Magnetic from '@/commons/magnetic';
+import classes from './style.module.scss';
 
 type TuserData = {
   name: string;
@@ -157,14 +158,17 @@ const ContactCard = () => {
         </div>
       </div>
 
-      <button
-        className={classes.submitbutton}
-        onClick={(e) => handleValidateInputFields(e)}
-        data-loading={loading}
-      >
-        <p>SEND MESSAGE</p>
-        <span className={classes.submitbuttonLoader} />
-      </button>
+      <Magnetic>
+        <button
+          className={classes.submitbutton}
+          onClick={(e) => handleValidateInputFields(e)}
+          data-loading={loading}
+        >
+          <p>SEND MESSAGE</p>
+          <span className={classes.submitbuttonLoader} />
+        </button>
+      </Magnetic>
+
       <Toast message={toast} setMessage={setToast} />
     </div>
   );
