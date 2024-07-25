@@ -25,6 +25,13 @@
       font-weight: 500;
       position: relative;
       top: -4px;
+
+      .letterMask {
+        position: relative;
+        overflow: hidden;
+        display: inline-flex;
+        margin-right: 5px;
+      }
     }
   }
 }

@@ -58,7 +58,7 @@ const FooterSection = () => {
         <p>
           {description.split(' ').map((word, index) => {
             return (
-              <span key={index} className={classes.mask}>
+              <span key={index} className={classes.letterMask}>
                 <motion.span
                   variants={slideUpDefaultAnimation}
                   custom={index}
