@@ -43,12 +43,14 @@ const AboutSection = () => {
         <h2 id="about_heading-title">
           {handleSplitPhrase('What i do /', 'about_heading-title')}
         </h2>
-        <h3>
-          {handleSplitPhrase(
-            'A skilled frontend web developer adept creating elegant modern designs, seamlessly integrating creativity with tech to deliver captivating user experience.',
-            'about_heading-description'
-          )}
-        </h3>
+        <div className={classes.description}>
+          <h3>
+            {handleSplitPhrase(
+              'A skilled frontend web developer adept creating elegant modern designs, seamlessly integrating creativity with tech to deliver captivating user experience.',
+              'about_heading-description'
+            )}
+          </h3>
+        </div>
       </div>
       <div className={classes.skillsWrp}>
         {skillsData.map((element: TAboutData, index: number) => (

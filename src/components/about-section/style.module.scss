@@ -33,29 +33,32 @@
       }
     }
 
-    & > h3 {
-      color: var(--text-tertiary);
-      text-wrap: balance;
-      font-size: var(--text-base--large);
-      flex: 1;
-      opacity: 0.8;
-      line-height: 132.5%;
-      margin-top: 1.5rem;
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-      display: flex;
-      flex-wrap: wrap;
+    .description {
+      max-width: 100%;
+      overflow: hidden;
 
-      & > span {
-        display: inline-block;
-        margin-right: 5px;
+      & > h3 {
+        color: var(--text-tertiary);
+        font-size: var(--text-base--large);
+        opacity: 0.8;
+        line-height: 132.5%;
+        margin-top: 1.5rem;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        display: flex;
+        flex-wrap: wrap;
 
         & > span {
           display: inline-block;
-          translate: none;
-          rotate: none;
-          scale: none;
-          transform: translateY(20%);
-          opacity: 0;
+          margin-right: 5px;
+
+          & > span {
+            display: inline-block;
+            translate: none;
+            rotate: none;
+            scale: none;
+            transform: translateY(20%);
+            opacity: 0;
+          }
         }
       }
     }
