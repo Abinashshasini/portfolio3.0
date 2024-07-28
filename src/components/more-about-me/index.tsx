@@ -30,9 +30,10 @@ const MoreAboutMe = () => {
         end: 'bottom 80%',
       },
       y: 0,
-      duration: 0.7,
+      stagger: 0.005,
       opacity: 0.8,
       ease: 'power1.inOut',
+      duration: 1,
     });
 
     gsap.to('#moreaboutme_description--two', {
@@ -47,9 +48,9 @@ const MoreAboutMe = () => {
       ease: 'power1.inOut',
     });
 
-    gsap.to('#about', {
+    gsap.to('#about_container', {
       scrollTrigger: {
-        trigger: '#about',
+        trigger: '#about_container',
         start: '60% 35%',
         end: '100% 60%',
         scrub: true,
@@ -60,7 +61,10 @@ const MoreAboutMe = () => {
   }, []);
 
   return (
-    <section className={`section-padding ${classes.container}`} id="about">
+    <section
+      className={`section-padding ${classes.container}`}
+      id="about_container"
+    >
       <div className={classes.headingCnt}>
         <h2 id="moreaboutme_heading-title" aria-hidden="true">
           {handleSplitPhrase(
@@ -76,12 +80,12 @@ const MoreAboutMe = () => {
         </div>
 
         <div className={classes.textCnt}>
-          <div className={classes.desOne} id="moreaboutme_description--one">
-            As a dedicated developer with a passion for design and development,
-            I take projects from ideation to launch within our company, ensuring
-            a seamless process that enhances our digital landscape and drives
-            business success.
-          </div>
+          <h3 className={classes.desOne}>
+            {handleSplitPhrase(
+              'As a dedicated developer with a passion for design and development, I take projects from ideation to launch within our company, ensuring a seamless process that enhances our digital landscape and drives business success.',
+              'moreaboutme_description--one'
+            )}
+          </h3>
 
           <div className={classes.desTwo}>
             <h4 id="moreaboutme_description--two">( ABOUT ME )</h4>

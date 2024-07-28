@@ -60,10 +60,20 @@
       font-weight: 500;
       line-height: 130%;
       color: var(--text-tertiary);
-      opacity: 0;
       text-wrap: balance;
       text-indent: 1rem;
-      transform: translateY(30px);
+
+      & > span {
+        display: inline-block;
+        margin-right: 5px;
+        text-indent: 0px;
+
+        & > span {
+          display: inline-block;
+          transform: translateY(20%);
+          opacity: 0;
+        }
+      }
     }
 
     .desTwo {
