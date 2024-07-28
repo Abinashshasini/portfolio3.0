@@ -68,7 +68,7 @@ export default function Home() {
         {isLoading && <Preloader />}
       </AnimatePresence>
       <Header />
-      <HeroSection />
+      <HeroSection isLoading={isLoading} />
       <AboutSection />
       <ProjectsSection />
       <MoreAboutMeSection />
