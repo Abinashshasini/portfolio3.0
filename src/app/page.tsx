@@ -58,7 +58,7 @@ export default function Home() {
         document.body.style.cursor = 'default';
         window.scrollTo(0, 0);
       },
-      window.innerWidth <= 720 ? 3500 : 2900
+      window.innerWidth <= 720 ? 3300 : 2700
     );
   }, []);
 
