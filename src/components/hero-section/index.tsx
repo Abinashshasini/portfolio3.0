@@ -38,12 +38,14 @@ const HeroSection = ({ isLoading }: { isLoading: boolean }) => {
           gsap.to('#hero_text_cnt', {
             scrollTrigger: {
               trigger: '#hero_text_cnt',
-              start: isMobile ? '100% 95%' : '100% 90%',
-              end: isMobile ? '60% 30%' : '100% 30%',
+              start: 'bottom bottom',
+              end: '100% 30%',
               scrub: true,
             },
             opacity: 0,
-            transform: 'translateY(80px) scale(0.9) translateZ(0px)',
+            transform: isMobile
+              ? 'translateY(80px) scale(0.9) translateZ(0px)'
+              : 'translateY(120px) scale(0.9) translateZ(0px)',
           });
 
           gsap.fromTo(

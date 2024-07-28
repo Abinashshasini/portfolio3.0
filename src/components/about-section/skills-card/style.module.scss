@@ -88,7 +88,11 @@
 @media screen and (min-width: 1200px) {
   .container {
     &[data-index='1'] {
-      margin-bottom: 17.5em;
+      margin-bottom: 17.9em;
+    }
+
+    &[data-index='2'] {
+      top: calc(20vh + 6.25em);
     }
 
     &[data-index='3'] {
