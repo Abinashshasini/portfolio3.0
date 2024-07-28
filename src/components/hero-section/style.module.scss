@@ -36,7 +36,7 @@
 
           & > span {
             display: inline-block;
-            // transform: translateY(100%);
+            transform: translateY(100%);
           }
         }
 
@@ -137,15 +137,15 @@
       }
 
       .arrowIconSection {
-        padding-top: 0px;
-        margin-top: -1rem;
+        padding: 0;
+        padding-bottom: 2rem;
 
         .arrowIconContainer {
-          width: 90px;
-          height: 90px;
+          width: 70px;
+          height: 70px;
 
           & > img {
-            height: 20px;
+            height: 1rem;
           }
         }
 

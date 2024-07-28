@@ -3,15 +3,17 @@ import React from 'react';
 import Image from 'next/image';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import { motion } from 'framer-motion';
 import { ScrollTrigger } from 'gsap/all';
-import { slideUpContainer, opacity } from './animation';
 import { ArrowIcon, HeroSVG } from '@/utils';
 import Magnetic from '@/commons/magnetic';
 import { handleSplitPhrase } from '@/utils/split';
 import classes from './style.module.scss';
 
 gsap.registerPlugin(ScrollTrigger);
+
+interface Conditions {
+  [key: string]: boolean;
+}
 
 const HeroSection = () => {
   /**
@@ -20,55 +22,46 @@ const HeroSection = () => {
    * Animate the title letter one by one.
    */
   useGSAP(() => {
-    let mm = gsap.matchMedia();
+    let animation = gsap.matchMedia();
 
-    // add a media query. When it matches, the associated function will run
-    // mm.add('(max-width: 700px)', () => {
-    //   gsap.to('#hero_text_cnt', {
-    //     scrollTrigger: {
-    //       trigger: '#hero_text_cnt',
-    //       start: '40% 95%',
-    //       end: '60% 30%',
-    //       scrub: true,
-    //     },
-    //     duration: 4,
-    //     opacity: 0,
-    //     transform: 'translateY(80px) scale(0.9) translateZ(0px)',
-    //   });
-    // });
+    /**add a media query. When it matches, the associated function will run */
+    animation.add(
+      {
+        isMobile: '(max-width: 720px)',
+        isDesktop: '(min-width: 721px)',
+      },
+      (context) => {
+        let { isMobile } = context.conditions as Conditions;
+        gsap.to('#hero_text_cnt', {
+          scrollTrigger: {
+            trigger: '#hero_text_cnt',
+            start: isMobile ? '100% 95%' : '100% 90%',
+            end: isMobile ? '60% 30%' : '100% 30%',
+            scrub: true,
+          },
+          opacity: 0,
+          transform: 'translateY(80px) scale(0.9) translateZ(0px)',
+        });
+      }
+    );
 
-    // mm.add('(min-width: 70px)', () => {
-    //   gsap.to('#hero_text_cnt', {
-    //     scrollTrigger: {
-    //       trigger: '#hero_text_cnt',
-    //       start: '55% 90%',
-    //       end: '100% 30%',
-    //       scrub: true,
-    //       markers: true,
-    //     },
-    //     duration: 4,
-    //     opacity: 0,
-    //     transform: 'translateY(80px) scale(0.9) translateZ(0px)',
-    //   });
-    // });
-
-    // gsap.fromTo(
-    //   '#hero_arrow_icn',
-    //   { opacity: 0, scale: 0.3, y: 30 },
-    //   {
-    //     y: 0,
-    //     scale: 1,
-    //     delay: 4,
-    //     duration: 0.8,
-    //     opacity: 1,
-    //     ease: 'power1.inOut',
-    //   }
-    // );
+    gsap.fromTo(
+      '#hero_arrow_icn',
+      { opacity: 0, scale: 0.3, y: 30 },
+      {
+        y: 0,
+        scale: 1,
+        delay: 4,
+        duration: 0.8,
+        opacity: 1,
+        ease: 'power1.inOut',
+      }
+    );
 
     gsap.to('#hero_heading-text', {
       y: 0,
       stagger: 0.02,
-      // delay: 2.8,
+      delay: 2.5,
       duration: 1,
       ease: 'power2.out',
     });
@@ -76,31 +69,26 @@ const HeroSection = () => {
 
   return (
     <section className={classes.heroContainer}>
-      <motion.div
-        animate="enter"
-        initial="initial"
-        // variants={slideUpContainer}
-        className={classes.container}
-      >
+      <div className={classes.container}>
         <section className={classes.warrper} id="hero_text_cnt">
           <div className={classes.textWrp}>
             <h2 className="league-gothic">
               {handleSplitPhrase("HI! I'M ABINASH", 'hero_heading-text')}
             </h2>
-            <motion.p animate="enter" initial="initial">
+            <p>
               I have been working in the industry since 2021, creating digital
               products that are both functional and enjoyable for end users.
-            </motion.p>
+            </p>
           </div>
           <div className={classes.textWrp}>
             <h2 className="league-gothic">
               {handleSplitPhrase('WEB DEVELOPER', 'hero_heading-text')}
             </h2>
-            <motion.p animate="enter" initial="initial">
+            <p>
               I’m currently working as a Frontend Developer, sculpting immersive
               digital experiences that seamlessly blend functionality and user
               appeal.
-            </motion.p>
+            </p>
           </div>
           <div className={classes.arrowIconSection} id="hero_arrow_icn">
             <Magnetic>
@@ -117,7 +105,7 @@ const HeroSection = () => {
             <p>Scroll Down</p>
           </div>
         </section>
-      </motion.div>
+      </div>
       <div className={classes.heroCircleImage}>
         <Image src={HeroSVG} alt="Hero circle image" width={100} height={100} />
       </div>

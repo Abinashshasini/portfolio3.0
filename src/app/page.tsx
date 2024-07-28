@@ -52,11 +52,14 @@ export default function Home() {
       requestAnimationFrame(raf);
     })();
 
-    setTimeout(() => {
-      setIsLoading(false);
-      document.body.style.cursor = 'default';
-      window.scrollTo(0, 0);
-    }, 4000);
+    setTimeout(
+      () => {
+        setIsLoading(false);
+        document.body.style.cursor = 'default';
+        window.scrollTo(0, 0);
+      },
+      window.innerWidth <= 720 ? 3500 : 2900
+    );
   }, []);
 
   return (

@@ -4,7 +4,11 @@ export const slideUpContainer = {
   },
   enter: {
     y: 0,
-    transition: { duration: 1.2, ease: [0.33, 1, 0.68, 1], delay: 3.1 },
+    transition: {
+      duration: 1.2,
+      ease: [0.33, 1, 0.68, 1],
+      delay: 3.1,
+    },
   },
 };
 
@@ -16,6 +20,6 @@ export const opacity = {
   enter: {
     y: 0,
     opacity: 1,
-    transition: { duration: 1, delay: 4 },
+    transition: { duration: 1, delay: 4.3 },
   },
 };
