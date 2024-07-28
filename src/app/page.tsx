@@ -50,13 +50,13 @@ export default function Home() {
         requestAnimationFrame(raf);
       }
       requestAnimationFrame(raf);
-
-      setTimeout(() => {
-        setIsLoading(false);
-        document.body.style.cursor = 'default';
-        window.scrollTo(0, 0);
-      }, 2600);
     })();
+
+    setTimeout(() => {
+      setIsLoading(false);
+      document.body.style.cursor = 'default';
+      window.scrollTo(0, 0);
+    }, 4000);
   }, []);
 
   return (

@@ -8,7 +8,6 @@ import styles from './style.module.scss';
 const words = [
   'Hello',
   'नमस्ते',
-  'ନମସ୍କାର',
   'ನಮಸ್ಕಾರ',
   'హలో',
   'வணக்கம்',
@@ -17,8 +16,7 @@ const words = [
   'Olà',
   'やあ',
   'Hallå',
-  'Guten tag',
-  'Hallo',
+  'ନମସ୍କାର',
 ];
 
 const Preloader: FC = () => {
@@ -49,7 +47,10 @@ const Preloader: FC = () => {
 
   /** Effect to set the width and height as per the device on mount */
   useEffect(() => {
-    setDimension({ width: window.innerWidth, height: window.innerHeight });
+    setDimension({
+      width: document.documentElement?.clientWidth,
+      height: document.documentElement?.clientHeight,
+    });
   }, []);
 
   /** Effect to change the word in every 150ms */
