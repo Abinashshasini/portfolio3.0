@@ -52,6 +52,7 @@
       opacity: 0.9;
       line-height: 1.4;
       font-weight: 500;
+      text-wrap: pretty;
     }
 
     & > .skillSets {
@@ -123,7 +124,6 @@
       grid-template-columns: repeat(12, minmax(0, 1fr));
 
       & > p {
-        max-width: 540ch;
         grid-column: span 6 / span 6;
       }
 
