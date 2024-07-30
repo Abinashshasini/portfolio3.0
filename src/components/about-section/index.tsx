@@ -32,7 +32,7 @@ const AboutSection = () => {
       },
       y: 0,
       stagger: 0.005,
-      opacity: 0.8,
+      opacity: 1,
       ease: 'power1.inOut',
     });
   }, []);
@@ -46,7 +46,7 @@ const AboutSection = () => {
         <div className={classes.description}>
           <h3>
             {handleSplitPhrase(
-              'Your friendly neighborhood frontend developer and JavaScript engineer. I spend my days (and often nights) painting the Internet canvas with (PROJECTS) and lines of code, turning zeroes and ones into immersive, interactive experiences,',
+              'Your friendly neighborhood frontend developer and JavaScript engineer. I spend my days (and often nights) painting the Internet canvas with lines of code, turning zeroes and ones into immersive, interactive experiences,',
               'about_heading-description'
             )}
           </h3>

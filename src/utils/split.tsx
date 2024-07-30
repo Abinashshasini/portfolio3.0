@@ -8,6 +8,7 @@ export const handleSplitWords = (word: string, id: string) => {
       </span>
     );
   });
+  letters.push(<span id={id}>&nbsp;</span>);
   return letters;
 };
 

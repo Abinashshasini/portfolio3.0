@@ -37,17 +37,17 @@ export const AbinashEmailPic = emailPic;
 export const skillsData = [
   {
     id: '#01',
-    title: 'Frontend Development',
+    title: 'Web Development',
     description:
-      'I strive for seamless experiences, empowering effortless user engagement. From concept to execution, I push web development boundaries to create immersive solutions.',
+      'I design seamless, user-friendly websites, pushing the limits of web development from start to finish to deliver engaging solutions.',
     technology: ['React JS', 'JavaScript', 'Next JS'],
     icon: shape1,
   },
   {
     id: '#02',
-    title: 'Backend Development',
+    title: 'API Development',
     description:
-      "I'm on a journey to enhance my skills in digital infrastructure for dynamic web experiences. With a senior frontend background, I understand user-centric design principles and love crafting engaging online interfaces.",
+      'I aim to enhance my skills in digital infrastructure for dynamic web experiences. As a senior frontend developer, I excel in user-centric design and love crafting engaging interfaces.',
     technology: ['Node JS', 'MongodB', 'Express JS'],
     icon: shape2,
   },
@@ -55,7 +55,7 @@ export const skillsData = [
     id: '#03',
     title: 'Apps Development',
     description:
-      'As a React Native developer, I craft cross-platform apps for seamless user experiences. Passionate about mobile tech, I thrive on bringing ideas to life in app development.',
+      'As a React Native developer, I create cross-platform apps for seamless user experiences. Passionate about mobile tech, I bring ideas to life through innovative app development.',
     technology: ['React Native', 'Expo', 'Android/IOS Development'],
     icon: shape3,
   },

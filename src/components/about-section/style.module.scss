@@ -17,10 +17,10 @@
       transition-property: all;
       transition-duration: 0.5s;
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      letter-spacing: -1px;
 
       & > span {
         display: inline-block;
-        margin-right: 10px;
 
         & > span {
           display: inline-block;
@@ -35,18 +35,17 @@
       overflow: hidden;
 
       & > h3 {
-        color: var(--text-tertiary);
+        color: var(--text-secondary);
         font-size: var(--text-base--large);
-        opacity: 0.8;
         line-height: 132.5%;
         margin-top: 1.5rem;
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
         display: flex;
         flex-wrap: wrap;
+        font-weight: 500;
 
         & > span {
           display: inline-block;
-          margin-right: 5px;
 
           & > span {
             display: inline-block;
@@ -78,19 +77,20 @@
       align-items: flex-start;
 
       & > h2 {
-        width: 50%;
-
-        & > span {
-          margin-right: 1rem;
-        }
+        width: 60%;
       }
 
       .description {
-        width: 50%;
+        width: 40%;
+
         & > h3 {
           margin-top: 1rem;
         }
       }
+    }
+
+    .skillsWrp {
+      margin-top: 7rem;
     }
   }
 }

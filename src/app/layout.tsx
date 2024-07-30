@@ -10,17 +10,17 @@ const roboto = localFont({
       style: 'normal',
     },
     {
-      path: '../../public/assets/fonts/OverusedGrotesk-Medium.woff2',
+      path: '../../public/assets/fonts/OverusedGrotesk-Book.woff2',
       weight: '500',
       style: 'normal',
     },
     {
-      path: '../../public/assets/fonts/OverusedGrotesk-Bold.woff2',
+      path: '../../public/assets/fonts/OverusedGrotesk-Medium.woff2',
       weight: '600',
       style: 'normal',
     },
     {
-      path: '../../public/assets/fonts/OverusedGrotesk-ExtraBold.woff2',
+      path: '../../public/assets/fonts/OverusedGrotesk-Bold.woff2',
       weight: '700',
       style: 'normal',
     },
