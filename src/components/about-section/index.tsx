@@ -46,7 +46,7 @@ const AboutSection = () => {
         <div className={classes.description}>
           <h3>
             {handleSplitPhrase(
-              'A skilled frontend web developer adept creating elegant modern designs, seamlessly integrating creativity with tech to deliver captivating user experience.',
+              'Your friendly neighborhood frontend developer and JavaScript engineer. I spend my days (and often nights) painting the Internet canvas with (PROJECTS) and lines of code, turning zeroes and ones into immersive, interactive experiences,',
               'about_heading-description'
             )}
           </h3>
