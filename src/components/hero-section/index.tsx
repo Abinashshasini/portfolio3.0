@@ -38,7 +38,7 @@ const HeroSection = ({ isLoading }: { isLoading: boolean }) => {
           gsap.to('#hero_text_cnt', {
             scrollTrigger: {
               trigger: '#hero_text_cnt',
-              start: 'bottom 98%',
+              start: 'bottom 95%',
               end: '100% 30%',
               scrub: true,
             },
@@ -91,9 +91,9 @@ const HeroSection = ({ isLoading }: { isLoading: boolean }) => {
               opacity: 0,
             },
             {
-              opacity: 1,
-              y: 0,
+              opacity: 0.7,
               duration: 1,
+              y: 0,
               delay: 1,
             }
           );
