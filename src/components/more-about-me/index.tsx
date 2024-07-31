@@ -8,9 +8,15 @@ import { handleSplitPhrase } from '@/utils/split';
 import classes from './style.module.scss';
 
 gsap.registerPlugin(ScrollTrigger);
+interface Conditions {
+  [key: string]: boolean;
+}
+
 const MoreAboutMe = () => {
   /** useGSAP hook to animate the heading and description */
   useGSAP(() => {
+    let animation = gsap.matchMedia();
+
     gsap.to('#moreaboutme_heading-title', {
       scrollTrigger: {
         trigger: '#moreaboutme_heading-title',
@@ -30,34 +36,50 @@ const MoreAboutMe = () => {
         end: 'bottom 80%',
       },
       y: 0,
-      stagger: 0.005,
-      opacity: 0.8,
-      ease: 'power1.inOut',
-      duration: 1,
-    });
-
-    gsap.to('#moreaboutme_description--two', {
-      scrollTrigger: {
-        trigger: '#moreaboutme_description--two',
-        start: 'top 90%',
-        end: 'bottom 80%',
-      },
-      y: 0,
-      duration: 0.7,
-      opacity: 0.9,
+      stagger: 0.004,
+      opacity: 1,
       ease: 'power1.inOut',
     });
 
-    gsap.to('#about_container', {
-      scrollTrigger: {
-        trigger: '#about_container',
-        start: '60% 35%',
-        end: '100% 60%',
-        scrub: true,
+    gsap.fromTo(
+      '#moreaboutme_description--two',
+      {
+        y: 50,
+        opacity: 0,
       },
-      duration: 4,
-      transform: 'scale(0.97)',
-    });
+      {
+        scrollTrigger: {
+          trigger: '#moreaboutme_description--two',
+          start: 'top 90%',
+          end: 'bottom 80%',
+        },
+        y: 0,
+        duration: 1,
+        opacity: 0.9,
+        ease: 'back.in',
+      }
+    );
+
+    /**add a media query. When it matches, the associated function will run */
+    animation.add(
+      {
+        isMobile: '(max-width: 720px)',
+        isDesktop: '(min-width: 721px)',
+      },
+      (context) => {
+        let { isMobile } = context.conditions as Conditions;
+        gsap.to('#about_container', {
+          scrollTrigger: {
+            trigger: '#about_container',
+            start: '60% 35%',
+            end: '100% 60%',
+            scrub: true,
+          },
+          duration: 4,
+          transform: isMobile ? 'scale(0.98)' : 'scale(0.985)',
+        });
+      }
+    );
   }, []);
 
   return (
@@ -87,9 +109,9 @@ const MoreAboutMe = () => {
             )}
           </h3>
 
-          <div className={classes.desTwo}>
-            <h4 id="moreaboutme_description--two">( ABOUT ME )</h4>
-            <p id="moreaboutme_description--two">
+          <div className={classes.desTwo} id="moreaboutme_description--two">
+            <h4>( ABOUT ME )</h4>
+            <p>
               Hello! I&apos;m Abinash Shasini, a software engineer from India
               with a creative spark and an insatiable passion for learning and
               innovating. I specialize in crafting stunning, user-friendly, and
