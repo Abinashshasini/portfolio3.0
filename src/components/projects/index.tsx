@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -10,7 +10,10 @@ import { handleSplitPhrase } from '@/utils/split';
 import classes from './style.module.scss';
 
 gsap.registerPlugin(ScrollTrigger);
+
 const Projects = () => {
+  const headingRef = useRef(null);
+
   /** useGSAP hook to animate the heading */
   useGSAP(() => {
     gsap.to('#project_heading-title', {
@@ -28,7 +31,7 @@ const Projects = () => {
   return (
     <section className={`section-padding ${classes.container}`} id="work">
       <div className={classes.headingCnt}>
-        <h2 aria-hidden="true" id="project_heading-title">
+        <h2 aria-hidden="true" id="project_heading-title" ref={headingRef}>
           {handleSplitPhrase('Personal Projects', 'project_heading-title')}
           <sup>
             <span>(</span>
@@ -47,7 +50,13 @@ const Projects = () => {
             className={classes.projectCardCnt}
           >
             <div className={classes.projectDetailImg}>
-              <img src={element.img.src} alt="project image" />
+              <Image
+                src={element.img.src}
+                alt="project image"
+                layout="responsive"
+                width={500}
+                height={300}
+              />
             </div>
             <h3>{element.title}</h3>
             <p>{element.description}</p>
