@@ -56,6 +56,7 @@ const Projects = () => {
                 layout="responsive"
                 width={500}
                 height={300}
+                priority
               />
             </div>
             <h3>{element.title}</h3>

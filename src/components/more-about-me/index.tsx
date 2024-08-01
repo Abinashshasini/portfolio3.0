@@ -3,9 +3,10 @@ import React from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
-import { AbinashImage } from '@/utils';
-import { handleSplitPhrase } from '@/utils/split';
+import { AbinashImage, ArrowDownIcon } from '@/utils';
+import { handleSplitPhrase, handleSplitWords } from '@/utils/split';
 import classes from './style.module.scss';
+import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger);
 interface Conditions {
@@ -36,9 +37,10 @@ const MoreAboutMe = () => {
         end: 'bottom 80%',
       },
       y: 0,
-      stagger: 0.004,
+      stagger: 0.011,
       opacity: 1,
-      ease: 'power1.inOut',
+      ease: 'power3.inOut',
+      scrub: true,
     });
 
     gsap.fromTo(
@@ -50,13 +52,13 @@ const MoreAboutMe = () => {
       {
         scrollTrigger: {
           trigger: '#moreaboutme_description--two',
-          start: 'top 90%',
-          end: 'bottom 80%',
+          start: 'top 95%',
+          end: 'bottom 50%',
         },
         y: 0,
         duration: 1,
-        opacity: 0.9,
-        ease: 'back.in',
+        opacity: 1,
+        ease: 'power3.inOut',
       }
     );
 
@@ -71,12 +73,12 @@ const MoreAboutMe = () => {
         gsap.to('#about_container', {
           scrollTrigger: {
             trigger: '#about_container',
-            start: '60% 35%',
-            end: '100% 60%',
+            start: isMobile ? '60% 35%' : '70% 60%',
+            end: isMobile ? '100% 60%' : '100% 20%',
             scrub: true,
           },
           duration: 4,
-          transform: isMobile ? 'scale(0.98)' : 'scale(0.985)',
+          transform: isMobile ? 'scale(0.98)' : 'scale(0.98)',
         });
       }
     );
@@ -88,6 +90,13 @@ const MoreAboutMe = () => {
       id="about_container"
     >
       <div className={classes.headingCnt}>
+        <Image
+          src={ArrowDownIcon.src}
+          alt="my personal photo"
+          width={50}
+          height={50}
+          priority
+        />
         <h2 id="moreaboutme_heading-title" aria-hidden="true">
           {handleSplitPhrase(
             'Alittle bit about me /',
@@ -98,26 +107,34 @@ const MoreAboutMe = () => {
 
       <div className={classes.detailsWrp}>
         <div className={classes.imgCnt}>
-          <img src={AbinashImage.src} alt="my personal photo" />
+          <Image
+            src={AbinashImage.src}
+            alt="my personal photo"
+            fill={true}
+            priority
+          />
         </div>
 
         <div className={classes.textCnt}>
           <h3 className={classes.desOne}>
-            {handleSplitPhrase(
+            {handleSplitWords(
               'As a dedicated developer with a passion for design and development, I take projects from ideation to launch within our company, ensuring a seamless process that enhances our digital landscape and drives business success.',
               'moreaboutme_description--one'
             )}
           </h3>
 
           <div className={classes.desTwo} id="moreaboutme_description--two">
-            <h4>( ABOUT ME )</h4>
+            <h4>(&nbsp;&nbsp;ABOUT ME&nbsp;&nbsp;)</h4>
             <p>
-              Hello! I&apos;m Abinash Shasini, a software engineer from India
-              with a creative spark and an insatiable passion for learning and
-              innovating. I specialize in crafting stunning, user-friendly, and
-              professional websites and mobile apps. Think of me as the
-              Michelangelo of coding—except my Sistine Chapel is your next
-              project!
+              Results-driven software engineer with a proven track record of
+              crafting complex, high-quality solutions for web and mobile apps.
+              I excel at solving intricate coding challenges and driving
+              innovation to boost project success and business growth.
+              <br /> <br /> I excel in transforming technical requirements into
+              user-friendly and scalable products, ensuring alignment with
+              strategic goals and enhancing overall operational efficiency.
+              Think of me as the Michelangelo of coding — except my Sistine
+              Chapel is your next project!
             </p>
           </div>
         </div>

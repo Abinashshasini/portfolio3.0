@@ -13,6 +13,7 @@ import ArrowSvg from '/public/assets/images/arrow.svg';
 import ShubhamPhoto from '/public/assets/images/shubham.png';
 import AsutoshPhoto from '/public/assets/images/ashutosh.jpeg';
 import AbinashPhoto from '/public/assets/images/abinash.jpg';
+import ArrowDownSvg from '/public/assets/images/arrowDown.svg';
 
 /** Skills images */
 import react from '/public/assets/images/react.svg';
@@ -31,6 +32,7 @@ export const LogoIcn = logo;
 export const skillsIn = skills;
 export const sideMenuImage = sideMenuSvg;
 export const ArrowIcon = ArrowSvg;
+export const ArrowDownIcon = ArrowDownSvg;
 export const AbinashImage = AbinashPhoto;
 export const AbinashEmailPic = emailPic;
 

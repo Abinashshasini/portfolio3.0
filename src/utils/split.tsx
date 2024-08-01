@@ -1,5 +1,5 @@
 /** Function to split words in letters and pushing them into a span tag */
-export const handleSplitWords = (word: string, id: string) => {
+export const handleSplitLetters = (word: string, id: string) => {
   let letters: React.JSX.Element[] = [];
   word.split('').forEach((letter: string, index: number) => {
     letters.push(
@@ -20,12 +20,32 @@ export const handleSplitPhrase = (
 ) => {
   let body: React.JSX.Element[] = [];
   _phrase.split(' ').forEach((word: string, index: number) => {
-    const letters = handleSplitWords(word, id);
+    const letters = handleSplitLetters(word, id);
     body.push(
       <span key={`word_${index}`} className={className}>
         {letters}
       </span>
     );
+  });
+  return body;
+};
+
+/** Function to split the phares into words */
+export const handleSplitWords = (
+  _phrase: string,
+  id: string,
+  className?: string
+) => {
+  let body: React.JSX.Element[] = [];
+  _phrase.split(' ').forEach((word: string, index: number) => {
+    body.push(
+      <span className={className}>
+        <span key={`word_${index}`} id={id}>
+          {word}
+        </span>
+      </span>
+    );
+    body.push(<span id={id}>&nbsp;</span>);
   });
   return body;
 };
