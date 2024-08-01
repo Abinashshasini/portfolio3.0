@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo, useMemo } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
@@ -12,30 +12,43 @@ gsap.registerPlugin(ScrollTrigger);
 const AboutSection = () => {
   /** useGSAP hook to animate the heading */
   useGSAP(() => {
-    gsap.to('#about_heading-title', {
-      scrollTrigger: {
-        trigger: '#about_heading-title',
-        start: 'top 90%',
-        end: 'bottom 80%',
-      },
-      y: 0,
-      stagger: 0.02,
-      duration: 0.5,
-      opacity: 1,
+    const animations = gsap.context(() => {
+      gsap.to('#about_heading-title', {
+        scrollTrigger: {
+          trigger: '#about_heading-title',
+          start: 'top 90%',
+          end: 'bottom 80%',
+        },
+        y: 0,
+        stagger: 0.02,
+        duration: 0.5,
+        opacity: 1,
+      });
+
+      gsap.to('#about_heading-description', {
+        scrollTrigger: {
+          trigger: '#about_heading-description',
+          start: 'top 90%',
+          end: 'bottom 80%',
+        },
+        y: 0,
+        stagger: 0.005,
+        opacity: 1,
+        ease: 'power1.inOut',
+      });
     });
 
-    gsap.to('#about_heading-description', {
-      scrollTrigger: {
-        trigger: '#about_heading-description',
-        start: 'top 90%',
-        end: 'bottom 80%',
-      },
-      y: 0,
-      stagger: 0.005,
-      opacity: 1,
-      ease: 'power1.inOut',
-    });
+    return () => animations.revert();
   }, []);
+
+  /** Memoize the skills data mapping */
+  const skillsContent = useMemo(
+    () =>
+      skillsData.map((element: TAboutData, index: number) => (
+        <SkillCard index={index} data={element} key={element.id} />
+      )),
+    [skillsData]
+  );
 
   return (
     <section className={`section-padding ${classes.container}`} id="skills">
@@ -52,13 +65,9 @@ const AboutSection = () => {
           </h3>
         </div>
       </div>
-      <div className={classes.skillsWrp}>
-        {skillsData.map((element: TAboutData, index: number) => (
-          <SkillCard index={index} data={element} key={element.id} />
-        ))}
-      </div>
+      <div className={classes.skillsWrp}>{skillsContent}</div>
     </section>
   );
 };
 
-export default AboutSection;
+export default memo(AboutSection);

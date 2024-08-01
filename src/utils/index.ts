@@ -37,7 +37,7 @@ export const AbinashEmailPic = emailPic;
 export const skillsData = [
   {
     id: '#01',
-    title: 'Web Engineering',
+    title: 'Web Development',
     description:
       'I design seamless, user-friendly websites, pushing the limits of web development from start to finish to deliver engaging solutions.',
     technology: ['React JS', 'JavaScript', 'Next JS'],
