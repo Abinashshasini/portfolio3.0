@@ -15,7 +15,7 @@
       letter-spacing: 1px;
       font-weight: 500;
       text-transform: uppercase;
-      color: var(--text-secondary);
+      color: #524d47;
     }
 
     & > p:last-child {
@@ -25,12 +25,15 @@
       font-weight: 500;
       position: relative;
       top: -4px;
+      font-weight: 500;
 
-      .letterMask {
-        position: relative;
-        overflow: hidden;
-        display: inline-flex;
-        margin-right: 5px;
+      span {
+        display: inline-block;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+
+        span {
+          transform: translateY(2rem);
+        }
       }
     }
   }

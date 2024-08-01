@@ -3,10 +3,10 @@ import React from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
+import Image from 'next/image';
 import { AbinashImage, ArrowDownIcon } from '@/utils';
 import { handleSplitPhrase, handleSplitWords } from '@/utils/split';
 import classes from './style.module.scss';
-import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger);
 interface Conditions {
@@ -126,15 +126,15 @@ const MoreAboutMe = () => {
           <div className={classes.desTwo} id="moreaboutme_description--two">
             <h4>(&nbsp;&nbsp;ABOUT ME&nbsp;&nbsp;)</h4>
             <p>
-              Results-driven software engineer with a proven track record of
-              crafting complex, high-quality solutions for web and mobile apps.
-              I excel at solving intricate coding challenges and driving
-              innovation to boost project success and business growth.
-              <br /> <br /> I excel in transforming technical requirements into
-              user-friendly and scalable products, ensuring alignment with
-              strategic goals and enhancing overall operational efficiency.
-              Think of me as the Michelangelo of coding — except my Sistine
-              Chapel is your next project!
+              Your friendly neighborhood frontend developer, and JavaScript
+              engineer. I spend my days (and often nights) painting the Internet
+              canvas with <b>PROJECTS</b> and lines of code, turning zeroes and
+              ones into immersive, interactive experiences.
+              <br /> <br /> When I&apos;m not crafting beautiful web
+              experiences, you can find me lifting weights or Getting lost in
+              the rhythm of a badminton match, fully immersed in the fast-paced
+              rallies and strategic plays. anyways you can always{' '}
+              <b>CONTACT ME</b>
             </p>
           </div>
         </div>

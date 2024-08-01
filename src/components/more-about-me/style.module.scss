@@ -26,9 +26,6 @@
 
         & > span {
           display: inline-block;
-          translate: none;
-          rotate: none;
-          scale: none;
           transform: translateY(100%);
           opacity: 0;
         }
@@ -97,6 +94,12 @@
         font-weight: 500;
         font-size: var(--text-base--small);
         max-width: 45ch;
+
+        b {
+          font-weight: 600;
+          text-decoration: underline;
+          letter-spacing: 1px;
+        }
       }
     }
   }

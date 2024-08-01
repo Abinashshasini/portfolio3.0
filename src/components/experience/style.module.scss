@@ -18,8 +18,8 @@
   .headingCnt {
     & > h2 {
       color: var(--text-primary);
-      font-size: clamp(3rem, 2rem + 4vi, 10.5rem);
-      font-weight: 700;
+      font-size: var(--heading-base-medium);
+      font-weight: 600;
       text-transform: uppercase;
       transition: all 0.5s;
       padding-bottom: 1rem;
@@ -72,6 +72,10 @@
   .container {
     padding: 2% 6% 5%;
 
+    .headingCnt {
+      padding-bottom: 5rem;
+    }
+
     .skillsWrp {
       display: flex;
       flex-direction: row-reverse;
@@ -93,7 +97,7 @@
     }
 
     .separator {
-      margin-top: 3rem;
+      margin-top: 5rem;
 
       & > span {
         height: 4px;

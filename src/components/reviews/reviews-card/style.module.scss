@@ -8,8 +8,8 @@
 
   & > blockquote {
     line-height: 1.25;
-    color: var(--text-secondary);
-    font-weight: 500;
+    color: rgb(57, 54, 50);
+    font-weight: 600;
     font-size: 1.45rem;
     text-wrap: pretty;
     max-height: 40ch;
@@ -41,14 +41,14 @@
     font-size: 1rem;
 
     & > h4 {
-      color: var(--text-secondary);
+      color: #6b645c;
       font-weight: 600;
       margin-bottom: 5px;
       letter-spacing: 0.5px;
     }
 
     & > p {
-      color: var(--text-base-deep);
+      color: rgb(140, 140, 145);
       font-weight: 400;
       margin-bottom: 5px;
       letter-spacing: 0.5px;

@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/all';
 import SkillCard from './skills-card';
 import { skillsData } from '@/utils';
 import { TAboutData } from '@/types';
-import { handleSplitPhrase } from '@/utils/split';
+import { handleSplitPhrase, handleSplitWords } from '@/utils/split';
 import classes from './style.module.scss';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -20,7 +20,7 @@ const AboutSection = () => {
           end: 'bottom 80%',
         },
         y: 0,
-        stagger: 0.02,
+        stagger: 0.01,
         duration: 0.5,
         opacity: 1,
       });
@@ -32,9 +32,10 @@ const AboutSection = () => {
           end: 'bottom 80%',
         },
         y: 0,
-        stagger: 0.005,
+        stagger: 0.01,
         opacity: 1,
-        ease: 'power1.inOut',
+        ease: 'power3.inOut',
+        scrub: true,
       });
     });
 
@@ -57,9 +58,10 @@ const AboutSection = () => {
           {handleSplitPhrase('What i do /', 'about_heading-title')}
         </h2>
         <div className={classes.description}>
+          <h4>(&nbsp;&nbsp;SERVICES&nbsp;&nbsp;)</h4>
           <h3>
-            {handleSplitPhrase(
-              'Your friendly neighborhood frontend engineer. I spend my days (and often nights) painting the Internet canvas with lines of code, turning zeroes and ones into immersive, interactive experiences.',
+            {handleSplitWords(
+              'Results-driven software engineer with a proven track record of crafting complex, high-quality solutions for web and mobile apps. I excel at solving intricate coding challenges and driving innovation to boost project success and business growth.',
               'about_heading-description'
             )}
           </h3>
