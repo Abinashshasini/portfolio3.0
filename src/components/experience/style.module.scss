@@ -19,11 +19,11 @@
     & > h2 {
       color: var(--text-primary);
       font-size: var(--heading-base-medium);
-      font-weight: 600;
+      font-weight: 700;
       text-transform: uppercase;
       transition: all 0.5s;
       padding-bottom: 1rem;
-      line-height: 1.2;
+      line-height: 1;
 
       & > span {
         display: inline-block;

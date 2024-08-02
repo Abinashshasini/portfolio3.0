@@ -43,9 +43,9 @@ export const handleSplitWords = (
         <span key={`word_${index}`} id={id}>
           {word}
         </span>
+        <span id={id}>&nbsp;</span>
       </span>
     );
-    body.push(<span id={id}>&nbsp;</span>);
   });
   return body;
 };

@@ -12,7 +12,7 @@ const Experience = () => {
       <div className={classes.container}>
         <div className={classes.headingCnt}>
           <h2 aria-hidden="true">
-            <span>Professional Experience And Reviews /</span>
+            <span>DON&apos;T TAKE MY WORD FOR IT / /</span>
           </h2>
         </div>
 

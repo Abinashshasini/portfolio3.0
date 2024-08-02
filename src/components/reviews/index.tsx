@@ -2,11 +2,11 @@ import React from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { useGSAP } from '@gsap/react';
+import { handleSplitWords } from '@/utils/split';
 import ReviewsCard from './reviews-card';
 import { reviewsData } from '@/utils';
 import { TReviewsData } from '@/types';
 import classes from './style.module.scss';
-import { handleSplitWords } from '@/utils/split';
 
 gsap.registerPlugin(ScrollTrigger);
 

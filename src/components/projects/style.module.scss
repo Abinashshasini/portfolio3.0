@@ -27,11 +27,13 @@
       @include transition(all, 0.5s);
       padding-bottom: 3rem;
 
-      span {
+      & > span {
         display: inline-block;
-        span {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+
+        & > span {
           display: inline-block;
-          transform: translateY(50%);
+          transform: translateY(100%);
           opacity: 0;
         }
       }

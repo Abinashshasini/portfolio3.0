@@ -1,28 +1,18 @@
 'use client';
-import React, { useRef } from 'react';
+import React from 'react';
 import { BiSolidMobileVibration } from 'react-icons/bi';
 import { IoNewspaper } from 'react-icons/io5';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import Link from 'next/link';
-import { useInView, motion } from 'framer-motion';
 import Magnetic from '@/commons/magnetic';
-import { handleSplitPhrase } from '@/utils/split';
+import { handleSplitPhrase, handleSplitWords } from '@/utils/split';
 import ContactCard from './contact-card';
-import { slideUpDefaultAnimation } from '@/commons/animation';
 import classes from './style.module.scss';
 
 gsap.registerPlugin(ScrollTrigger);
 const FooterSection = () => {
-  /** Footer description */
-  const description =
-    "Drop me a line anytime for job updates or just to connect. I'm here to help!";
-
-  /** Required refs and hooks */
-  const descriptionRef = useRef(null);
-  const isInView = useInView(descriptionRef);
-
   /** useGSAP hook to animate the heading and description */
   useGSAP(() => {
     gsap.to('#footer_heading-title', {
@@ -36,6 +26,19 @@ const FooterSection = () => {
       duration: 0.5,
       opacity: 1,
     });
+
+    gsap.to('#footer--description', {
+      scrollTrigger: {
+        trigger: '#footer--description',
+        start: 'top 90%',
+        end: 'bottom 80%',
+      },
+      y: 0,
+      stagger: 0.011,
+      opacity: 1,
+      ease: 'power3.inOut',
+      scrub: true,
+    });
   }, []);
 
   /** Function to call my number */
@@ -46,30 +49,20 @@ const FooterSection = () => {
   return (
     <footer className={`section-padding ${classes.container}`} id="contact">
       <div className={classes.headingCnt}>
-        <h2 id="footer_heading-title" aria-hidden="true">
+        <h2 aria-hidden="true">
           {handleSplitPhrase(
             'Have Something In Mind /',
             'footer_heading-title'
           )}
         </h2>
       </div>
-      <div className={classes.footerHeading} ref={descriptionRef}>
+      <div className={classes.footerHeading}>
         <p>(Contact ME)</p>
         <p>
-          {description.split(' ').map((word, index) => {
-            return (
-              <span key={index} className={classes.letterMask}>
-                <motion.span
-                  variants={slideUpDefaultAnimation}
-                  custom={index}
-                  animate={isInView ? 'open' : 'closed'}
-                  key={index}
-                >
-                  {word}
-                </motion.span>
-              </span>
-            );
-          })}
+          {handleSplitWords(
+            "Drop me a line anytime for job updates or just to connect. I'm here to help!",
+            'footer--description'
+          )}
         </p>
       </div>
       <div className={classes.infoContainer}>
