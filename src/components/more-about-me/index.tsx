@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React from 'react';
+import React, { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
@@ -9,15 +9,11 @@ import { handleSplitPhrase, handleSplitWords } from '@/utils/split';
 import classes from './style.module.scss';
 
 gsap.registerPlugin(ScrollTrigger);
-interface Conditions {
-  [key: string]: boolean;
-}
 
 const MoreAboutMe = () => {
+  const aboutContainerRef = useRef(null);
   /** useGSAP hook to animate the heading and description */
   useGSAP(() => {
-    let animation = gsap.matchMedia();
-
     gsap.to('#moreaboutme_heading-title', {
       scrollTrigger: {
         trigger: '#moreaboutme_heading-title',
@@ -61,34 +57,10 @@ const MoreAboutMe = () => {
         ease: 'power3.inOut',
       }
     );
-
-    /**add a media query. When it matches, the associated function will run */
-    animation.add(
-      {
-        isMobile: '(max-width: 720px)',
-        isDesktop: '(min-width: 721px)',
-      },
-      (context) => {
-        let { isMobile } = context.conditions as Conditions;
-        gsap.to('#about_container', {
-          scrollTrigger: {
-            trigger: '#about_container',
-            start: isMobile ? '60% 35%' : '70% 60%',
-            end: isMobile ? '100% 60%' : '100% 20%',
-            scrub: true,
-          },
-          duration: 4,
-          transform: isMobile ? 'scale(0.98)' : 'scale(0.98)',
-        });
-      }
-    );
   }, []);
 
   return (
-    <section
-      className={`section-padding ${classes.container}`}
-      id="about_container"
-    >
+    <section className={`section-padding ${classes.container}`}>
       <div className={classes.headingCnt}>
         <Image
           src={ArrowDownIcon.src}
