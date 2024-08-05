@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { z } from 'zod';
+import Image from 'next/image';
 import { AbinashEmailPic } from '@/utils';
 import Toast from '@/components/toast';
 import Magnetic from '@/commons/magnetic';
@@ -111,7 +112,12 @@ const ContactCard = () => {
       <div className={classes.emailContainer}>
         To:
         <span className={classes.email}>
-          <img src={AbinashEmailPic.src} alt="email_pic" />
+          <Image
+            src={AbinashEmailPic.src}
+            alt="email_pic"
+            width={36}
+            height={36}
+          />
           abinashshaini125@gmail.com
         </span>
       </div>

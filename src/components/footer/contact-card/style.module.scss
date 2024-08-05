@@ -3,7 +3,7 @@
 
   & > h3 {
     font-size: var(--text-base--medium);
-    color: var(--text-secondary);
+    color: var(--black-secondary);
     font-weight: 500;
   }
 
@@ -14,7 +14,7 @@
     gap: 1.5rem;
     padding: 2rem 0 1rem;
     font-weight: 500;
-    color: var(--text-secondary);
+    color: var(--text-primary);
     width: 100%;
     border-bottom: 1px solid var(--black-secondary);
 
@@ -30,6 +30,8 @@
       background-color: var(--text-secondary);
       letter-spacing: 0.5px;
       font-family: cursive;
+      font-weight: 500;
+      color: var(--bg-tertiary);
 
       & > img {
         width: 2rem;
@@ -47,7 +49,7 @@
     font-size: var(--text-base--large);
     gap: 1.5rem;
     font-weight: 500;
-    color: var(--text-secondary);
+    color: var(--text-primary);
     width: 100%;
     border-bottom: 1px solid var(--black-secondary);
 
@@ -62,6 +64,7 @@
       & > p {
         position: relative;
         width: fit-content;
+        font-weight: 500;
 
         &::after {
           content: '*';
@@ -79,7 +82,7 @@
         background: transparent;
         border: none;
         outline: none;
-        color: var(--text-primary);
+        color: #524d47;
         font-size: 1.1rem;
         min-height: 60px;
         width: 100%;
@@ -105,6 +108,7 @@
     align-items: center;
     width: 130px;
     height: 35px;
+    font-weight: 600;
 
     &[data-loading='true'] {
       & > p {

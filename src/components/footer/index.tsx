@@ -116,7 +116,7 @@ const FooterSection = () => {
             </Link>
           </Magnetic>
           <Magnetic>
-            <Link href="https://github.com/Abinashshasini">GitHub</Link>
+            <Link href="https://github.com/Abinashshasini">Github</Link>
           </Magnetic>
           <Magnetic>
             <Link href={`https://twitter.com/ShasiniAbinash`}>Twitter</Link>
