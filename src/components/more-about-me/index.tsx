@@ -54,7 +54,7 @@ const MoreAboutMe = () => {
         y: 0,
         duration: 1,
         opacity: 1,
-        ease: 'power3.inOut',
+        ease: 'power2.inOut',
       }
     );
   }, []);
