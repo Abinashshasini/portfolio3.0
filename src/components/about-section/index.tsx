@@ -29,7 +29,7 @@ const AboutSection = () => {
         scrollTrigger: {
           trigger: '#about_heading-description',
           start: 'top 90%',
-          end: 'bottom 78%',
+          end: 'bottom 80%',
         },
         y: 0,
         stagger: 0.01,

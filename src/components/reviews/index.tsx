@@ -28,7 +28,7 @@ const Reviews = () => {
   }, []);
 
   return (
-    <section className={classes.container}>
+    <section className={`section-padding ${classes.container}`}>
       <div className={classes.reviewsHeading}>
         <p>(&nbsp;Reviews&nbsp;)</p>
         <p>
