@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
+import { Analytics } from '@vercel/analytics/react';
 import './globals.css';
 
 const roboto = localFont({
@@ -47,6 +48,7 @@ export default function RootLayout({
           </filter>
         </svg>
         {children}
+        <Analytics />
       </body>
     </html>
   );
