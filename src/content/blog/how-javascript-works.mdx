@@ -1,0 +1,331 @@
+---
+title: 'How JavaScript Works: Under the Hood in Modern Browsers'
+date: '2026-02-20'
+description: 'A deep dive into the JavaScript engine, event loop, call stack, memory heap, and the async machinery that powers the modern web.'
+---
+
+JavaScript is the most widely used programming language on the planet — yet most developers don't truly understand _how_ it executes their code. Let's pull back the curtain and explore the engine that powers every click, scroll, and interaction on the web.
+
+---
+
+## The JavaScript Engine
+
+Every browser ships with a **JavaScript engine** — a program that reads your code and turns it into machine instructions the CPU can execute.
+
+The most popular engines:
+
+- **V8** — Chrome, Node.js, Deno, Bun
+- **SpiderMonkey** — Firefox
+- **JavaScriptCore** — Safari
+
+These engines don't just "interpret" JavaScript line by line. They use a technique called **Just-In-Time (JIT) compilation** — a hybrid approach that combines interpretation and compilation for maximum speed.
+
+```javascript
+// Your code goes through these stages:
+// 1. Parsing    → Abstract Syntax Tree (AST)
+// 2. Interpreting → Bytecode (quick start)
+// 3. Optimizing  → Machine Code (hot paths get compiled)
+
+function greet(name) {
+  return `Hello, ${name}!`;
+}
+
+// First few calls: interpreted as bytecode
+// After many calls: JIT-compiled to native machine code
+for (let i = 0; i < 10000; i++) {
+  greet('World');
+}
+```
+
+> **Fun fact:** V8 has two compilers — **Ignition** (interpreter/bytecode) and **TurboFan** (optimizing compiler). If your function is called thousands of times, TurboFan compiles it to highly optimized machine code.
+
+---
+
+## The Call Stack
+
+JavaScript is **single-threaded** — it has exactly one call stack, meaning it can do one thing at a time.
+
+The **call stack** is a data structure that tracks where we are in the program:
+
+```javascript
+function multiply(a, b) {
+  return a * b;
+}
+
+function square(n) {
+  return multiply(n, n);
+}
+
+function printSquare(n) {
+  const result = square(n);
+  console.log(result);
+}
+
+printSquare(5);
+```
+
+Here's what the call stack looks like at each step:
+
+| Step | Call Stack (top → bottom)                               |
+| ---- | ------------------------------------------------------- |
+| 1    | `printSquare(5)`                                        |
+| 2    | `square(5)` → `printSquare(5)`                          |
+| 3    | `multiply(5, 5)` → `square(5)` → `printSquare(5)`       |
+| 4    | `square(5)` → `printSquare(5)` _(multiply returned 25)_ |
+| 5    | `printSquare(5)` _(square returned 25)_                 |
+| 6    | _(empty — program done)_                                |
+
+When a function is called, it's **pushed** onto the stack. When it returns, it's **popped** off. Simple, elegant, and the reason for the dreaded **"Maximum call stack size exceeded"** error:
+
+```javascript
+// 💥 Stack Overflow!
+function recurse() {
+  recurse(); // infinite recursion fills the stack
+}
+recurse(); // RangeError: Maximum call stack size exceeded
+```
+
+---
+
+## Memory: The Heap
+
+While the call stack handles _execution order_, the **heap** handles _memory allocation_. It's where objects, arrays, functions, and closures live.
+
+```javascript
+// Primitives (stored on the stack)
+const age = 25; // number → stack
+const name = 'Abinash'; // string → stack (small strings)
+
+// Reference types (stored on the heap)
+const user = {
+  // object → heap (stack holds the reference)
+  name: 'Abinash',
+  skills: ['React', 'Node', 'TypeScript'],
+};
+
+const projects = [1, 2, 3]; // array → heap
+```
+
+**Garbage Collection** automatically frees memory that's no longer reachable. V8 uses a **generational garbage collector**:
+
+1. **Young Generation** — Short-lived objects (most objects die young)
+2. **Old Generation** — Long-lived objects promoted from young gen
+
+> JavaScript developers don't manage memory manually, but understanding this helps you avoid **memory leaks** — like forgotten event listeners, closures holding large objects, or detached DOM nodes.
+
+---
+
+## The Event Loop: JavaScript's Secret Weapon
+
+Here's the big question: if JavaScript is single-threaded, how does it handle async operations like network requests, timers, and user input _without freezing the page_?
+
+The answer: the **Event Loop**.
+
+### The Architecture
+
+```
+┌──────────────────────────┐
+│       Call Stack         │
+│   (one thing at a time)  │
+└──────────┬───────────────┘
+           │
+           ▼
+┌──────────────────────────┐
+│       Event Loop         │
+│   (checks if stack is    │
+│    empty, then dequeues) │
+└──────────┬───────────────┘
+           │
+     ┌─────┴──────┐
+     ▼            ▼
+┌─────────┐  ┌────────────┐
+│ Micro   │  │  Macro     │
+│ Queue   │  │  Queue     │
+│(Promise)│  │(setTimeout │
+│         │  │ setInterval│
+└─────────┘  │ I/O)       │
+             └────────────┘
+```
+
+### How It Works
+
+1. JavaScript executes code on the **call stack**
+2. Async operations (fetch, setTimeout) are handed off to **Web APIs**
+3. When complete, callbacks are placed in the **task queue**
+4. The **event loop** checks: _"Is the call stack empty?"_
+5. If yes, it moves the next callback from the queue to the stack
+
+```javascript
+console.log('1: Start');
+
+setTimeout(() => {
+  console.log('2: Timeout callback');
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log('3: Promise callback');
+});
+
+console.log('4: End');
+
+// Output:
+// 1: Start
+// 4: End
+// 3: Promise callback  ← microtask (higher priority)
+// 2: Timeout callback  ← macrotask (lower priority)
+```
+
+### Microtasks vs Macrotasks
+
+This is crucial to understand:
+
+| Type           | Examples                                   | Priority                       |
+| -------------- | ------------------------------------------ | ------------------------------ |
+| **Microtasks** | Promises, queueMicrotask, MutationObserver | High (runs after _every_ task) |
+| **Macrotasks** | setTimeout, setInterval, I/O, UI rendering | Normal                         |
+
+**The rule:** After each macrotask, the engine executes _all_ microtasks in the queue before moving to the next macrotask or rendering.
+
+```javascript
+// This creates a priority inversion that confuses many devs
+setTimeout(() => console.log('timeout'), 0);
+Promise.resolve().then(() => console.log('promise'));
+queueMicrotask(() => console.log('microtask'));
+
+// Output: promise → microtask → timeout
+// All microtasks drain before the next macrotask
+```
+
+---
+
+## Closures: Functions That Remember
+
+A **closure** is a function that retains access to its lexical scope even after the outer function has returned. This is one of JavaScript's most powerful features.
+
+```javascript
+function createCounter() {
+  let count = 0; // this variable is "closed over"
+
+  return {
+    increment: () => ++count,
+    decrement: () => --count,
+    getCount: () => count,
+  };
+}
+
+const counter = createCounter();
+counter.increment(); // 1
+counter.increment(); // 2
+counter.decrement(); // 1
+counter.getCount(); // 1
+
+// 'count' is not accessible from outside
+// but the returned functions still have access to it
+```
+
+> Closures are the foundation of **data privacy**, **factory functions**, **event handlers**, and most **React hooks** (useState, useEffect, etc.)
+
+---
+
+## Prototypes & the Prototype Chain
+
+JavaScript doesn't have traditional classes (despite the `class` syntax). Under the hood, it uses **prototypal inheritance**:
+
+```javascript
+const animal = {
+  isAlive: true,
+  speak() {
+    return `${this.name} makes a sound`;
+  },
+};
+
+const dog = Object.create(animal);
+dog.name = 'Rex';
+dog.bark = () => 'Woof!';
+
+console.log(dog.speak()); // "Rex makes a sound" → found on prototype
+console.log(dog.bark()); // "Woof!" → found on dog itself
+console.log(dog.isAlive); // true → found on prototype
+```
+
+When you access a property, JavaScript walks up the **prototype chain**:
+
+1. Check the object itself
+2. Check `object.__proto__` (its prototype)
+3. Check `prototype.__proto__` (the prototype's prototype)
+4. Continue until `null` is reached
+
+```typescript
+// The modern class syntax is just syntactic sugar over prototypes
+class Animal {
+  isAlive = true;
+
+  speak(): string {
+    return `${this.name} makes a sound`;
+  }
+}
+
+class Dog extends Animal {
+  constructor(public name: string) {
+    super();
+  }
+
+  bark(): string {
+    return 'Woof!';
+  }
+}
+
+// Under the hood, this sets up the same prototype chain
+const rex = new Dog('Rex');
+console.log(rex.speak()); // works via prototype chain
+```
+
+---
+
+## Async/Await: Syntactic Sugar Over Promises
+
+`async/await` isn't new functionality — it's a cleaner way to write promise chains:
+
+```javascript
+// Promise chain (old way)
+function fetchUser(id) {
+  return fetch(`/api/users/${id}`)
+    .then((res) => res.json())
+    .then((user) => fetch(`/api/posts?userId=${user.id}`))
+    .then((res) => res.json())
+    .catch((err) => console.error(err));
+}
+
+// Async/await (modern way) — same thing, much cleaner
+async function fetchUser(id) {
+  try {
+    const userRes = await fetch(`/api/users/${id}`);
+    const user = await userRes.json();
+
+    const postsRes = await fetch(`/api/posts?userId=${user.id}`);
+    const posts = await postsRes.json();
+
+    return { user, posts };
+  } catch (err) {
+    console.error('Failed to fetch:', err);
+  }
+}
+```
+
+Behind the scenes, `async` functions return a Promise, and `await` pauses execution (without blocking the thread) by leveraging the **microtask queue**.
+
+---
+
+## Key Takeaways
+
+- JavaScript is **single-threaded** but handles concurrency through the **event loop**
+- The **call stack** tracks function execution; the **heap** stores data
+- **JIT compilation** makes JavaScript surprisingly fast for a dynamic language
+- **Microtasks** (Promises) always run before **macrotasks** (setTimeout)
+- **Closures** give functions persistent memory
+- **Prototypes**, not classes, are the true inheritance model
+- **async/await** is syntactic sugar over the Promise-based microtask system
+
+---
+
+_Understanding these internals won't just make you a better debugger — it'll change how you architect your applications. Every performance bug, every race condition, every mysterious "undefined" traces back to these fundamentals._

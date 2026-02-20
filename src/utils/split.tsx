@@ -1,14 +1,22 @@
 /** Function to split words in letters and pushing them into a span tag */
-export const handleSplitLetters = (word: string, id: string) => {
+export const handleSplitLetters = (
+  word: string,
+  id: string,
+  wordIndex: number = 0,
+) => {
   let letters: React.JSX.Element[] = [];
   word.split('').forEach((letter: string, index: number) => {
     letters.push(
-      <span id={id} key={`lettre_${index}`}>
+      <span id={id} key={`w${wordIndex}_l${index}`}>
         {letter}
-      </span>
+      </span>,
     );
   });
-  letters.push(<span id={id}>&nbsp;</span>);
+  letters.push(
+    <span id={id} key={`w${wordIndex}_space`}>
+      &nbsp;
+    </span>,
+  );
   return letters;
 };
 
@@ -16,15 +24,15 @@ export const handleSplitLetters = (word: string, id: string) => {
 export const handleSplitPhrase = (
   _phrase: string,
   id: string,
-  className?: string
+  className?: string,
 ) => {
   let body: React.JSX.Element[] = [];
   _phrase.split(' ').forEach((word: string, index: number) => {
-    const letters = handleSplitLetters(word, id);
+    const letters = handleSplitLetters(word, id, index);
     body.push(
       <span key={`word_${index}`} className={className}>
         {letters}
-      </span>
+      </span>,
     );
   });
   return body;
@@ -34,17 +42,15 @@ export const handleSplitPhrase = (
 export const handleSplitWords = (
   _phrase: string,
   id: string,
-  className?: string
+  className?: string,
 ) => {
   let body: React.JSX.Element[] = [];
   _phrase.split(' ').forEach((word: string, index: number) => {
     body.push(
-      <span className={className}>
-        <span key={`word_${index}`} id={id}>
-          {word}
-        </span>
+      <span className={className} key={`wordwrap_${index}`}>
+        <span id={id}>{word}</span>
         <span id={id}>&nbsp;</span>
-      </span>
+      </span>,
     );
   });
   return body;
