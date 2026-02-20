@@ -2,7 +2,7 @@
 import React, { FC } from 'react';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { opacity, slideUp } from './animation';
+import { opacity, slideUp, easing } from './animation';
 import styles from './style.module.scss';
 
 const words = [
@@ -37,11 +37,11 @@ const Preloader: FC = () => {
   const curve = {
     initial: {
       d: initialPath,
-      transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] },
+      transition: { duration: 0.7, ease: easing },
     },
     exit: {
       d: targetPath,
-      transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1], delay: 0.3 },
+      transition: { duration: 0.7, ease: easing, delay: 0.3 },
     },
   };
 
